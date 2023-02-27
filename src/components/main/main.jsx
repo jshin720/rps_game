@@ -1,6 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 
 function main() {
+  const [playerSelection, setPlayerSelection] = useState("");
+  const [computerSelection, setComputerSelection] = useState("");
+  const [selected, setSelected] = useState(false);
+
+  
+
 
 
   return (
