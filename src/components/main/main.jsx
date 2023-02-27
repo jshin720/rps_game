@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 
 function main() {
-  const [playerSelection, setPlayerSelection] = useState("");
-  const [computerSelection, setComputerSelection] = useState("");
+  const [playerChoices, setPlayerChoice] = useState([
+    "Rock",
+    "Paper",
+    "Scissor",
+  ]);
+  const [computerChoice, setComputerChoice] = useState([
+    "Rock",
+    "Paper",
+    "Scissor",
+  ]);
   const [selected, setSelected] = useState(false);
+  const [playerSelection, setPlayerSelection] = useState("");
 
-  
-
-
-
-  return (
-    <div>main</div>
-  )
+  return <div>main</div>;
 }
 
 export default main;
-
