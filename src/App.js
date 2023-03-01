@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import MainCard from './components/main_card/main_card';
-import Selection from './components/selection/selection';
+
 
 function App() {
   return (

@@ -1,33 +1,27 @@
 import React, { useState } from "react";
+import Selection from "../selection/selection";
 
 function MainCard() {
   const [playerChoice, setPlayerChoice] = useState("");
   const [selected, setSelected] = useState(false);
   const [score, setScore] = useState(0);
 
-  const computerChoices = ["Rock", "Paper", "Scissor"];
-  const randomIdx = Math.floor(Math.random() * computerChoices.length);
-  let computerChoice = computerChoices[randomIdx];
+  
 
   const update = (e) => {
     setPlayerChoice(e.target.value);
-    setSelected = useState(true);
+    
+    return (
+      <div>
+        <Selection
+          playerChoice={playerChoice}
+        />
+      </div>
+    )
   };
 
-  const randomizeComputerChoice = () => {
-    computerChoice = 
-  }
-
-  const playerWins = (playerChoice, computerChoice) => {
-    
-    if (playerChoice === "paper" && computerChoice === "rock") {
-      //return winners page
-    }
-  }
-
-  const playerLoses = (playerChoice, computerChoice) => {
-    //return the losers page
-  }
+ 
+  
 
   return <div>
     <div className="paper-tile">
