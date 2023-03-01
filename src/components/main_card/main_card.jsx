@@ -10,6 +10,7 @@ function MainCard() {
 
   const update = (e) => {
     setPlayerChoice(e.target.value);
+    console.log(playerChoice)
     
     return (
       <div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function selection(props) {
+function Selection(props) {
   let [playerChoice] = props;
 
   console.log(props)
@@ -32,4 +32,4 @@ function selection(props) {
   return <div>selection</div>;
 }
 
-export default selection;
+export default Selection;
