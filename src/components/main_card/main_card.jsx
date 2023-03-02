@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Selection from "../selection/selection";
 
-function MainCard() {
+function MainCard(props) {
   const [playerChoice, setPlayerChoice] = useState("");
   const [selected, setSelected] = useState(false);
-  const [score, setScore] = useState(0);
-  
+
+  let {score, setScore} = props
+
   const choices = [
     {
       name: "paper",
@@ -21,10 +22,12 @@ function MainCard() {
     }
   ];
   
-  
+
 
   const update = (e) => {
     setPlayerChoice(e.target.value);
+    setScore(score++)
+    console.log("props", props)
     console.log(playerChoice)
     
     return (
