@@ -5,7 +5,22 @@ function MainCard() {
   const [playerChoice, setPlayerChoice] = useState("");
   const [selected, setSelected] = useState(false);
   const [score, setScore] = useState(0);
-
+  
+  const choices = [
+    {
+      name: "paper",
+      beats: "rock"
+    },
+    {
+      name: "scissor",
+      beats: "paper"
+    },
+    {
+      name: "rock",
+      beats: "paper"
+    }
+  ];
+  
   
 
   const update = (e) => {

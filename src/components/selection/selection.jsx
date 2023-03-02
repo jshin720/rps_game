@@ -8,7 +8,6 @@ function Selection(props) {
   const [winner, setWinner] = useState(false);
   const [computerChoice, setComputerChoice] = useState("")
 
-  const computerChoices = ["Rock", "Paper", "Scissor"];
   const randomIdx = Math.floor(Math.random() * computerChoices.length);
   
 
