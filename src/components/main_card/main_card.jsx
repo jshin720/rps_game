@@ -24,35 +24,28 @@ function MainCard(props) {
   
 
 
-  const update = (e) => {
+  const handleClick = (e) => {
     setPlayerChoice(e.target.value);
-    setScore(score++)
-    console.log("props", props)
+      
+    console.log("e", e.target)
     console.log(playerChoice)
     
-    return (
-      <div>
-        <Selection
-          playerChoice={playerChoice}
-        />
-      </div>
-    )
   };
 
- 
+  c
   
 
   return <div>
     <div className="paper-tile">
-      <button id="paper-button" type="button" value="paper" onClick={update}>Paper</button>
+      <button id="paper-button" type="button" name="paper" value="paper" onClick={handleClick}>Paper</button>
     </div>
 
     <div className="scissor-tile">
-      <button id="scissor-button" type="button" value="scissor" onClick={update}>Scissor</button>
+      <button id="scissor-button" type="button"  name="scissor" value="scissor" onClick={handleClick}>Scissor</button>
     </div>
 
     <div className="rock-tile">
-      <button id="rock-button" type="button" value="rock" onClick={update}>Rock</button>
+      <button id="rock-button" type="button" name="rock" value="rock" onClick={handleClick}>Rock</button>
     </div>
 
   </div>;
