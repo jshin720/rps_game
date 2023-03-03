@@ -23,9 +23,61 @@ function Selection(props) {
     pSelection.beats === cChoice ? setWinner("wins") : setWinner("lose")
   };
 
- 
+  const winOrLose = (winner) => {
+    if (winner === "wins") {
+      return (
+        <div>
+          <div>
+            <h4>You Picked</h4>
+            <span>Players Choicc</span>
+          </div>
+          <div>
+            <h1>You Win</h1>
+            <button>Play Again</button>
+          </div>
+          <div>
+            <h4>The House Picked</h4>
+            <span>computers choice</span>
+          </div>
+        </div>
+      );
+    } else if (winner === "lose") {
+       return (
+        <div>
+          <div>
+            <h4>You Picked</h4>
+            <span>Players Choicc</span>
+          </div>
+          <div>
+            <h1>You lose</h1>
+            <button>Play Again</button>
+          </div>
+          <div>
+            <h4>The House Picked</h4>
+            <span>computers choice</span>
+          </div>
+        </div>
+    }
+  }
 
-  return <div>selection</div>;
+  return (
+    <>
+    { !winner ? 
+    (<div>
+        <div>
+          <h4>You Picked</h4>
+          <span>Players Choicc</span>
+        </div>
+        <div>
+          <h4>The House Picked</h4>
+          <span>computers choice</span>
+        </div>
+      </div> )
+    : 
+      winOrLose()
+  }
+    </>
+  ); 
 }
 
 export default Selection;
