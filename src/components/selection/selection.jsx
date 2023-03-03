@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function Selection(props) {
-  let {playerChoice, choices} = props;
+  let {pChoice, choices} = props;
 
   console.log(props)
 
@@ -10,19 +10,19 @@ function Selection(props) {
 
   const randomIdx = Math.floor(Math.random() * choices.length);
   
+  const cChoice = choices[randomIdx]; // getting what the computer chooses
 
   useEffect(() => {
     setTimeout(() => {
-      setComputerChoice(computerChoices[randomIdx]);
+      // setComputerChoice(computerChoices[randomIdx]);
     }, 2500)
   })
 
-  const 
+  const pSelection = choices.find((choice) => pChoice === choice.name);
 
-  const playerWins = (playerChoice, computerChoice) => {
-    if (playerChoice === "paper" && computerChoice === "rock") {
-      //return winners page
-    }
+  const playerWins = (pChoice, cChoice) => {
+    
+    
   };
 
   const playerLoses = (playerChoice, computerChoice) => {

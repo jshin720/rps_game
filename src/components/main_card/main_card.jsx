@@ -48,7 +48,7 @@ function MainCard(props) {
        </div> )
        : 
        <Selection
-        playerChoice={playerChoice}
+        pChoice={playerChoice}
         choices={choices}
        />
 
