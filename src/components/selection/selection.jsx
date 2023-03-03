@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 function Selection(props) {
-  let [playerChoice] = props;
+  let {playerChoice, choices} = props;
 
   console.log(props)
 
   const [winner, setWinner] = useState(false);
-  const [computerChoice, setComputerChoice] = useState("")
+  // const [computerChoice, setComputerChoice] = useState("")
 
-  const randomIdx = Math.floor(Math.random() * computerChoices.length);
+  const randomIdx = Math.floor(Math.random() * choices.length);
   
 
   useEffect(() => {
@@ -17,6 +17,7 @@ function Selection(props) {
     }, 2500)
   })
 
+  const 
 
   const playerWins = (playerChoice, computerChoice) => {
     if (playerChoice === "paper" && computerChoice === "rock") {

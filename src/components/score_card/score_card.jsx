@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import MainCard from '../main_card/main_card';
 
-function ScoreCard() {
-    const [score, setScore] = useState(0)
+function ScoreCard(props) {
+    
 
   return (
     <div>
-      <header className="App-header">
         <span>
           <ul>
             <li>Rock</li>
@@ -17,11 +16,6 @@ function ScoreCard() {
         <span className="score-holder">
           <h4>score {`${score}`}</h4>
         </span>
-      </header>
-      <MainCard
-       setScore={setScore}
-       score={score}
-      />
     </div>
   );
 }
