@@ -27,7 +27,7 @@ function MainCard(props) {
     setSelected(true);
   };
 
-  c
+  
   
 
   return (
