@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import MainCard from '../main_card/main_card';
 
 function ScoreCard(props) {
-  console.log(props)
+  // console.log(props)
     let {score} = props;
 
   return (
