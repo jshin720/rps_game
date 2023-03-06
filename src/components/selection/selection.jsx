@@ -15,7 +15,7 @@ function Selection(props) {
   
   useEffect(() => {
     setTimeout(() => {
-      if (!cChoice && !winner) {
+      if (!winner) {
         setCChoice(choices[randomIdx]); // getting what the computer chooses
         console.log("random", randomIdx);
         console.log("cchoice", cChoice.name);
