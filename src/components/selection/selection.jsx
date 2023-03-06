@@ -10,27 +10,38 @@ function Selection(props) {
 
   const randomIdx = Math.floor(Math.random() * choices.length);
   
-  useEffect(() => {
-    setTimeout(() => {
-      if (!cChoice) setCChoice(choices[randomIdx]); // getting what the computer chooses
-      console.log("random", choices[randomIdx])
-      playerWins(cChoice);
-      console.log("winner", winner)
-      // setComputerChoice(computerChoices[randomIdx]);
-    }, 2500)
-  })
-
   const pSelection = choices.find((choice) => pChoice === choice.name);
 
   const playerWins = (cChoice) => {
-    console.log("ps", pSelection)
-    pSelection.beats === cChoice.name ? setWinner("Won") : setWinner("Lost")
+    console.log("ps", pSelection.beats === cChoice.name);
+    console.log("pchoice", pChoice, "cchoice", cChoice.name)
     
+    if (pSelection.beats === cChoice.name) {
+      setWinner("Won")
+    } else if (pChoice === cChoice.name) {
+      setWinner("Draw")
+    } else {
+      setWinner("Lost")
+    }
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!cChoice && !winner) {
+        setCChoice(choices[randomIdx]); // getting what the computer chooses
+        console.log("random", choices[randomIdx]);
+        playerWins(cChoice);
+        console.log("cchoice", cChoice.name);
+        
+      }
+      // setComputerChoice(computerChoices[randomIdx]);
+    }, 2000)
+  })
+
   
 
   const winOrLose = (winner) => {
-    if (winner === "Won" || winner === "Lost") {
+    console.log("winner", winner);
       return (
         <div>
           <div>
@@ -47,24 +58,6 @@ function Selection(props) {
           </div>
         </div>
       );
-    } else {
-      return (
-        <div>
-          <div>
-            <h4>You Picked</h4>
-            <span>{`${pChoice}`}</span>
-          </div>
-          <div>
-            <h1>Draw</h1>
-            <button>Play Again</button>
-          </div>
-          <div>
-            <h4>The House Picked</h4>
-            <span>{`${cChoice.name}`}</span>
-          </div>
-        </div>
-      );
-    }
   };
 
   return (

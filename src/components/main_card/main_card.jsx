@@ -8,7 +8,7 @@ function MainCard(props) {
   const choices = [
     {
       name: "paper",
-      beats: "rock"
+      beats: "rock",
     },
     {
       name: "scissor",
@@ -16,8 +16,8 @@ function MainCard(props) {
     },
     {
       name: "rock",
-      beats: "paper"
-    }
+      beats: "scissor",
+    },
   ];
   
 
@@ -32,29 +32,49 @@ function MainCard(props) {
 
   return (
     <>
-      { !selected ? 
-       ( <div>
-       <span className="paper-tile">
-           <button id="paper-button" type="button" name="paper" value="paper" onClick={handleClick}>Paper</button>
-         </span>
-     
-         <span className="scissor-tile">
-           <button id="scissor-button" type="button"  name="scissor" value="scissor" onClick={handleClick}>Scissor</button>
-         </span>
-     
-         <span className="rock-tile">
-           <button id="rock-button" type="button" name="rock" value="rock" onClick={handleClick}>Rock</button>
-         </span>
-       </div> )
-       : 
-       <Selection
-        pChoice={playerChoice}
-        choices={choices}
-       />
+      {!selected ? (
+        <div>
+          <span className="paper-tile">
+            <button
+              id="paper-button"
+              type="button"
+              name="paper"
+              value="paper"
+              onClick={handleClick}
+            >
+              Paper
+            </button>
+          </span>
 
-      }
+          <span className="scissor-tile">
+            <button
+              id="scissor-button"
+              type="button"
+              name="scissor"
+              value="scissor"
+              onClick={handleClick}
+            >
+              Scissor
+            </button>
+          </span>
+
+          <span className="rock-tile">
+            <button
+              id="rock-button"
+              type="button"
+              name="rock"
+              value="rock"
+              onClick={handleClick}
+            >
+              Rock
+            </button>
+          </span>
+        </div>
+      ) : (
+        <Selection pChoice={playerChoice} choices={choices} />
+      )}
     </>
-  )
+  );
 }
 
 export default MainCard;
