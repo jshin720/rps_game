@@ -32,7 +32,7 @@ function MainCard(props) {
 
   return (
     <>
-      { selected ? 
+      { !selected ? 
        ( <div>
        <span className="paper-tile">
            <button id="paper-button" type="button" name="paper" value="paper" onClick={handleClick}>Paper</button>

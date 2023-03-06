@@ -57,8 +57,9 @@ function Selection(props) {
             <span>computers choice</span>
           </div>
         </div>
+       )
     }
-  }
+  };
 
   return (
     <>
@@ -66,7 +67,7 @@ function Selection(props) {
     (<div>
         <div>
           <h4>You Picked</h4>
-          <span>Players Choicc</span>
+          <span>Players Choice</span>
         </div>
         <div>
           <h4>The House Picked</h4>
@@ -74,7 +75,7 @@ function Selection(props) {
         </div>
       </div> )
     : 
-      winOrLose()
+      winOrLose(winner)
   }
     </>
   ); 

@@ -6,13 +6,13 @@ import ResultCard from "../result_card/result_card";
 function Home_card() {
   const [ended, setEnded] = useState(false); // boolean to see if the game ended
   const [score, setScore] = useState(0);
-
+  
   return (
     <div>
       <ScoreCard
         score={score}
       />
-      {ended ? 
+      {/* {ended ? 
         <MainCard
           setScore={setScore}
         /> 
@@ -20,7 +20,8 @@ function Home_card() {
         <ResultCard
           setEnded={setEnded}
         />
-      }
+      } */}
+      <MainCard/>
     </div>
   );
 }
