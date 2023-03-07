@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 function Selection(props) {
-  let {pChoice, choices} = props;
+  let {pChoice, choices, score, setScore, setEnded} = props;
 
-  console.log(props)
+  console.log(score++)
 
   const [winner, setWinner] = useState("");
   const [cChoice, setCChoice] = useState("");
@@ -15,7 +15,7 @@ function Selection(props) {
   
   useEffect(() => {
     setTimeout(() => {
-      if (!winner) {
+      if (!cChoice && !winner) {
         setCChoice(choices[randomIdx]); // getting what the computer chooses
         console.log("random", randomIdx);
         console.log("cchoice", cChoice.name);
@@ -32,6 +32,7 @@ function Selection(props) {
     
     if (pSelection.beats === cChoice.name) {
       setWinner("Won")
+      setScore(score++)
     } else if (pChoice === cChoice.name) {
       setWinner("Draw")
     } else if (cChoice.beats === pChoice) {

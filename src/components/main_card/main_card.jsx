@@ -12,23 +12,18 @@ function MainCard(props) {
     },
     {
       name: "scissor",
-      beats: "paper"
+      beats: "paper",
     },
     {
       name: "rock",
       beats: "scissor",
     },
   ];
-  
-
 
   const handleClick = (e) => {
     setPlayerChoice(e.target.value);
     setSelected(true);
   };
-
-  
-  
 
   return (
     <>
@@ -71,7 +66,13 @@ function MainCard(props) {
           </span>
         </div>
       ) : (
-        <Selection pChoice={playerChoice} choices={choices} />
+        <Selection
+          pChoice={playerChoice}
+          choices={choices}
+          setScore={props.setScore}
+          setEnded={props.setEnded}
+          score={props.score}
+        />
       )}
     </>
   );

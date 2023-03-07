@@ -21,7 +21,11 @@ function Home_card() {
           setEnded={setEnded}
         />
       } */}
-      <MainCard/>
+      <MainCard
+        setScore={setScore}
+        setEnded={setEnded}
+        score={score}
+      />
     </div>
   );
 }
