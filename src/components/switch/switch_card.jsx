@@ -1,6 +1,6 @@
 import React from 'react';
 
-function switch_card() {
+function SwitchCard() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function switch_card() {
   );
 }
 
-export default switch_card;
+export default SwitchCard;
