@@ -5,42 +5,7 @@ function Selection(props) {
 
   console.log(score++)
 
-  const [winner, setWinner] = useState("");
-  const [cChoice, setCChoice] = useState("");
-
-  const randomIdx = Math.floor(Math.random() * choices.length);
   
-  const pSelection = choices.find((choice) => pChoice === choice.name);
-
-  
-  useEffect(() => {
-    setTimeout(() => {
-      if (!cChoice && !winner) {
-        setCChoice(choices[randomIdx]); // getting what the computer chooses
-        console.log("random", randomIdx);
-        console.log("cchoice", cChoice.name);
-        
-      }
-      playerWins(cChoice);
-      // setComputerChoice(computerChoices[randomIdx]);
-    }, 2000)
-  })
-  
-  const playerWins = (cChoice) => {
-    console.log("ps", pSelection.beats === cChoice.name);
-    console.log("pchoice", pChoice, "cchoice", cChoice.name)
-    
-    if (pSelection.beats === cChoice.name) {
-      setWinner("Won")
-      setScore(score++)
-    } else if (pChoice === cChoice.name) {
-      setWinner("Draw")
-    } else if (cChoice.beats === pChoice) {
-      setWinner("Lost")
-    }
-  };
-  
-
   const winOrLose = (winner) => {
     console.log("winner", winner);
       return (
