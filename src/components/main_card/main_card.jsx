@@ -100,10 +100,7 @@ function MainCard(props) {
       ) : (
         <Selection
           pChoice={playerChoice}
-          choices={choices}
-          setScore={props.setScore}
-          setEnded={props.setEnded}
-          score={props.score}
+          cChoice={cChoice}
         />
       )}
     </>
