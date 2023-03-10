@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 
 function Selection(props) {
-  
+
   const randomIdx = Math.floor(Math.random() * choices.length);
 
-  const pSelection = choices.find((choice) => pChoice === choice.name);
+  const pSelection = choices.find((choice) => playerChoice === choice.name);
 
   useEffect(() => {
     setTimeout(() => {
-      if (!cChoice && !winner) {
-        setCChoice(choices[randomIdx]); // getting what the computer chooses
+      if (!cChoice) {
+        setComputerChoice(choices[randomIdx]); // getting what the computer chooses
         console.log("random", randomIdx);
-        console.log("cchoice", cChoice.name);
+        console.log("cchoice", computerChoice.name);
       }
     }, 2000);
   });
@@ -30,7 +30,16 @@ function Selection(props) {
           </div>
         </div>
       ) : (
-        winOrLose(winner)
+        <div>
+          <div>
+            <h4>You Picked</h4>
+            <span>{`${playerChoice}`}</span>
+          </div>
+          <div>
+            <h4>The House Picked</h4>
+            <span>{`${computerChoice.name}`}</span>
+          </div>
+        </div>
       )}
     </>
   );

@@ -5,7 +5,7 @@ function MainCard(props) {
   const [playerChoice, setPlayerChoice] = useState("");
   const [selected, setSelected] = useState(false);
   const [winner, setWinner] = useState("");
-  const [cChoice, setCChoice] = useState("");
+  const [computerChoice, setComputerChoice] = useState("");
 
   const choices = [
     {
@@ -23,9 +23,6 @@ function MainCard(props) {
   ];
 
   
-
-   
-
   const handleClick = (e) => {
     setPlayerChoice(e.target.value);
     setSelected(true);
@@ -73,8 +70,9 @@ function MainCard(props) {
         </div>
       ) : (
         <Selection
-          pChoice={playerChoice}
-          setCChoice={setCChoice}
+          playerChoice={playerChoice}
+          computerChoice={computerChoice}
+          setCChoice={setComputerChoice}
           choices={choices}
         />
       )}
