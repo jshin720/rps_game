@@ -22,35 +22,9 @@ function MainCard(props) {
     },
   ];
 
-    const randomIdx = Math.floor(Math.random() * choices.length);
+  
 
-    const pSelection = choices.find((choice) => pChoice === choice.name);
-
-    useEffect(() => {
-      setTimeout(() => {
-        if (!cChoice && !winner) {
-          setCChoice(choices[randomIdx]); // getting what the computer chooses
-          console.log("random", randomIdx);
-          console.log("cchoice", cChoice.name);
-        }
-        playerWins(cChoice);
-        // setComputerChoice(computerChoices[randomIdx]);
-      }, 2000);
-    });
-
-    const playerWins = (cChoice) => {
-      console.log("ps", pSelection.beats === cChoice.name);
-      console.log("pchoice", pChoice, "cchoice", cChoice.name);
-
-      if (pSelection.beats === cChoice.name) {
-        setWinner("Won");
-        setScore(score++);
-      } else if (pChoice === cChoice.name) {
-        setWinner("Draw");
-      } else if (cChoice.beats === pChoice) {
-        setWinner("Lost");
-      }
-    };
+   
 
   const handleClick = (e) => {
     setPlayerChoice(e.target.value);
@@ -100,7 +74,8 @@ function MainCard(props) {
       ) : (
         <Selection
           pChoice={playerChoice}
-          cChoice={cChoice}
+          setCChoice={setCChoice}
+          choices={choices}
         />
       )}
     </>

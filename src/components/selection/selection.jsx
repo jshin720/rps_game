@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from "react";
 
 function Selection(props) {
-  let {pChoice, choices, score, setScore, setEnded} = props;
-
   
+  const randomIdx = Math.floor(Math.random() * choices.length);
 
-  
+  const pSelection = choices.find((choice) => pChoice === choice.name);
 
+  useEffect(() => {
+    setTimeout(() => {
+      if (!cChoice && !winner) {
+        setCChoice(choices[randomIdx]); // getting what the computer chooses
+        console.log("random", randomIdx);
+        console.log("cchoice", cChoice.name);
+      }
+    }, 2000);
+  });
 
   return (
     <>
@@ -25,7 +33,7 @@ function Selection(props) {
         winOrLose(winner)
       )}
     </>
-  ); 
+  );
 }
 
 export default Selection;

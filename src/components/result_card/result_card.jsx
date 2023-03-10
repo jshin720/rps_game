@@ -2,6 +2,22 @@ import React from 'react'
 
 export default function result_card(props) {
 
+
+   const playerWins = (cChoice) => {
+     console.log("ps", pSelection.beats === cChoice.name);
+     console.log("pchoice", pChoice, "cchoice", cChoice.name);
+
+     if (pSelection.beats === cChoice.name) {
+       setWinner("Won");
+       setScore(score++);
+     } else if (pChoice === cChoice.name) {
+       setWinner("Draw");
+     } else if (cChoice.beats === pChoice) {
+       setWinner("Lost");
+     }
+   };
+
+
     const winOrLose = (winner) => {
       console.log("winner", winner);
       return (
