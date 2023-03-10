@@ -8,7 +8,7 @@ function Selection(props) {
 
   useEffect(() => {
     setTimeout(() => {
-      if (!cChoice) {
+      if (!computerChoice) {
         setComputerChoice(choices[randomIdx]); // getting what the computer chooses
         console.log("random", randomIdx);
         console.log("cchoice", computerChoice.name);
@@ -18,7 +18,7 @@ function Selection(props) {
 
   return (
     <>
-      {!winner ? (
+      {!computerChoice ? (
         <div>
           <div>
             <h4>You Picked</h4>
