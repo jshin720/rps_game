@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ResultCard from "../result_card/result_card";
 
 function Selection(props) {
 

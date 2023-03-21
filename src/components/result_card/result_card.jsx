@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function result_card(props) {
+export default function ResultCard(props) {
 
 
   //  const playerWins = (cChoice) => {
