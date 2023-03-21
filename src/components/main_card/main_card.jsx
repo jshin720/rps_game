@@ -4,7 +4,7 @@ import Selection from "../selection/selection";
 function MainCard(props) {
   
   const [selected, setSelected] = useState(false);
-  const [winner, setWinner] = useState("");
+  // const [winner, setWinner] = useState("");
  
 
   const choices = [

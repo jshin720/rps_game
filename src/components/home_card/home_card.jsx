@@ -11,23 +11,21 @@ function Home_card() {
   
   return (
     <div>
-      <ScoreCard
-        score={score}
-      />
-      {/* {ended ? 
+      <ScoreCard score={score} />
+      {ended ? (
         <MainCard
           setScore={setScore}
-        /> 
-        : 
+          score={score}
+          setPlayerChoice={setPlayerChoice}
+          setComputerChoice={setComputerChoice}
+        />
+      ) : (
         <ResultCard
+          playerChoice={playerChoice}
+          computerChoice={computerChoice}
           setEnded={setEnded}
         />
-      } */}
-      <MainCard
-        setScore={setScore}
-        setEnded={setEnded}
-        score={score}
-      />
+      )}
     </div>
   );
 }
