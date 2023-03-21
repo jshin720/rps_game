@@ -14,11 +14,11 @@ function Home_card() {
     return 
       <>
         {selected ? (
-          <MainCard setPlayerChoice={setPlayerChoice} />
+          <MainCard setPlayerChoice={setPlayerChoice}
+            selected={setSelected}
+          />
         ) : (
           <Selection
-            setScore={setScore}
-            score={score}
             setComputerChoice={setComputerChoice}
             setEnded={setEnded}
           />

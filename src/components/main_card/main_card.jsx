@@ -6,6 +6,7 @@ function MainCard(props) {
   
   // const [winner, setWinner] = useState("");
  
+    const {selected, setPlayerChoice} = props;
 
   const choices = [
     {
