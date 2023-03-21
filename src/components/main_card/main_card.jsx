@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Selection from "../selection/selection";
 
 function MainCard(props) {
-  const [playerChoice, setPlayerChoice] = useState("");
+  
   const [selected, setSelected] = useState(false);
   const [winner, setWinner] = useState("");
-  const [computerChoice, setComputerChoice] = useState("");
+ 
 
   const choices = [
     {
