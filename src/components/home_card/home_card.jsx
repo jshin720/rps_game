@@ -8,17 +8,29 @@ function Home_card() {
   const [score, setScore] = useState(0);
   const [playerChoice, setPlayerChoice] = useState("");
   const [computerChoice, setComputerChoice] = useState("");
-  
+  const [selected, setSelected] = useState(false);
+
+  const selectionSwitch = () => {
+    return 
+      <>
+        {selected ? (
+          <MainCard setPlayerChoice={setPlayerChoice} />
+        ) : (
+          <Selection
+            setScore={setScore}
+            score={score}
+            setComputerChoice={setComputerChoice}
+            setEnded={setEnded}
+          />
+        )}
+      </>;
+  };
+
   return (
     <div>
       <ScoreCard score={score} />
       {ended ? (
-        <MainCard
-          setScore={setScore}
-          score={score}
-          setPlayerChoice={setPlayerChoice}
-          setComputerChoice={setComputerChoice}
-        />
+        selectionSwitch
       ) : (
         <ResultCard
           playerChoice={playerChoice}
