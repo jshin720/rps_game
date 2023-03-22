@@ -29,28 +29,35 @@ function Home_card() {
 
    let component;
     switch (switchCard) {
-      case "selection":
+      case "selected":
         component = <Selection
             setComputerChoice={setComputerChoice}
             setEnded={setEnded}
             computerChoice={computerChoice}
             playerChoice={playerChoice}
             choices={choices}
+            setSwitchCard={setSwitchCard}
           />
         break;
       case "result":
-        component =  <ResultCard
-          playerChoice={playerChoice}
-          computerChoice={computerChoice}
-          setEnded={setEnded}
-          choices={choices}
-        />
+        component = (
+          <ResultCard
+            playerChoice={playerChoice}
+            computerChoice={computerChoice}
+            setEnded={setEnded}
+            choices={choices}
+            setSwitchCard={setSwitchCard}
+          />
+        );
         break
       default:
-        component = <MainCard 
-                      setPlayerChoice={setPlayerChoice}
-                      selected={setSelected}
-                    />
+        component = (
+          <MainCard
+            setPlayerChoice={setPlayerChoice}
+            selected={setSelected}
+            setSwitchCard={setSwitchCard}
+          />
+        );
     }
 
 

@@ -14,7 +14,7 @@ function MainCard(props) {
   
   const handleClick = (e) => {
     props.setPlayerChoice(e.target.value);
-    props.setSelected(true);
+    props.setSwitchCard("selected");
   };
 
   return (

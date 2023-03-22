@@ -3,7 +3,7 @@ import ResultCard from "../result_card/result_card";
 
 function Selection(props) {
 
-  const { setComputerChoice, choices, playerChoice,computerChoice } = props
+  const { setComputerChoice, choices, playerChoice,computerChoice, setSwitchCard } = props
   const randomIdx = Math.floor(Math.random() * choices.length);
 
   
@@ -12,6 +12,7 @@ function Selection(props) {
     setTimeout(() => {
       if (!computerChoice) {
         setComputerChoice(choices[randomIdx]); // getting what the computer chooses
+        setSwitchCard("result")
         console.log("random", randomIdx);
         console.log("cchoice", computerChoice.name);
       }

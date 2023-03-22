@@ -18,7 +18,7 @@ export default function ResultCard(props) {
   //      setWinner("Lost");
   //    }
   //  };
-
+  
 
     const winOrLose = (winner) => {
       console.log("winner", winner);
