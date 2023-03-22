@@ -11,6 +11,22 @@ function Home_card() {
   const [computerChoice, setComputerChoice] = useState("");
   const [selected, setSelected] = useState(false);
 
+   const choices = [
+     {
+       name: "paper",
+       beats: "rock",
+     },
+     {
+       name: "scissor",
+       beats: "paper",
+     },
+     {
+       name: "rock",
+       beats: "scissor",
+     },
+   ];
+
+
   const selectionSwitch = () => {
     return 
       <>
@@ -24,6 +40,7 @@ function Home_card() {
             setEnded={setEnded}
             computerChoice={computerChoice}
             playerChoice={playerChoice}
+            choices={choices}
           />
         )}
       </>;

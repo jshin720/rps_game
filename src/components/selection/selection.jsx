@@ -3,6 +3,7 @@ import ResultCard from "../result_card/result_card";
 
 function Selection(props) {
 
+  const { setComputerChoice, choices, playerChoice,computerChoice } = props
   const randomIdx = Math.floor(Math.random() * choices.length);
 
   const pSelection = choices.find((choice) => playerChoice === choice.name);
@@ -23,7 +24,7 @@ function Selection(props) {
         <div>
           <div>
             <h4>You Picked</h4>
-            <span>{`${pChoice}`}</span>
+            <span>{`${playerChoice}`}</span>
           </div>
           <div>
             <h4>The House Picked</h4>

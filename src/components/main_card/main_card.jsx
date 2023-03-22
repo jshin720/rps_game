@@ -9,20 +9,7 @@ function MainCard(props) {
     // const {selected, setPlayerChoice} = props;
     console.log("main", props)
 
-  const choices = [
-    {
-      name: "paper",
-      beats: "rock",
-    },
-    {
-      name: "scissor",
-      beats: "paper",
-    },
-    {
-      name: "rock",
-      beats: "scissor",
-    },
-  ];
+ 
 
   
   const handleClick = (e) => {
