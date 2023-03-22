@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ResultCard(props) {
 
-
+  const {playerChoice, computerChoice} = props;
   //  const playerWins = (cChoice) => {
   //    console.log("ps", pSelection.beats === cChoice.name);
   //    console.log("pchoice", pChoice, "cchoice", cChoice.name);
@@ -24,7 +24,7 @@ export default function ResultCard(props) {
         <div>
           <div>
             <h4>You Picked</h4>
-            <span>{`${pChoice}`}</span>
+            <span>{`${playerChoice}`}</span>
           </div>
           <div>
             <h1>{`You ${winner}`}</h1>
@@ -32,7 +32,7 @@ export default function ResultCard(props) {
           </div>
           <div>
             <h4>The House Picked</h4>
-            <span>{`${cChoice.name}`}</span>
+            <span>{`${computerChoice.name}`}</span>
           </div>
         </div>
       );

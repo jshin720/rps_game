@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ScoreCard from "../score_card/score_card";
 import MainCard from "../main_card/main_card";
 import ResultCard from "../result_card/result_card";
+import Selection from "../selection/selection";
 
 function Home_card() {
   const [ended, setEnded] = useState(false); // boolean to see if the game ended
@@ -21,6 +22,8 @@ function Home_card() {
           <Selection
             setComputerChoice={setComputerChoice}
             setEnded={setEnded}
+            computerChoice={computerChoice}
+            playerChoice={playerChoice}
           />
         )}
       </>;
