@@ -10,6 +10,7 @@ function Home_card() {
   const [playerChoice, setPlayerChoice] = useState("");
   const [computerChoice, setComputerChoice] = useState("");
   const [selected, setSelected] = useState(false);
+  const [switchCard, setSwitchCard] = useState("")
 
    const choices = [
      {
@@ -26,38 +27,37 @@ function Home_card() {
      },
    ];
 
-
-  const selectionSwitch = () => {
-    return 
-      <>
-        {selected ? (
-          <MainCard setPlayerChoice={setPlayerChoice}
-            selected={setSelected}
-          />
-        ) : (
-          <Selection
+   let component;
+    switch (switchCard) {
+      case "selection":
+        component = <Selection
             setComputerChoice={setComputerChoice}
             setEnded={setEnded}
             computerChoice={computerChoice}
             playerChoice={playerChoice}
             choices={choices}
           />
-        )}
-      </>;
-  };
+        break;
+      case "result":
+        component =  <ResultCard
+          playerChoice={playerChoice}
+          computerChoice={computerChoice}
+          setEnded={setEnded}
+          choices={choices}
+        />
+        break
+      default:
+        component = <MainCard 
+                      setPlayerChoice={setPlayerChoice}
+                      selected={setSelected}
+                    />
+    }
+
 
   return (
     <div>
       <ScoreCard score={score} />
-      {ended ? (
-        selectionSwitch
-      ) : (
-        <ResultCard
-          playerChoice={playerChoice}
-          computerChoice={computerChoice}
-          setEnded={setEnded}
-        />
-      )}
+      {component}
     </div>
   );
 }

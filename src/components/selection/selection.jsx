@@ -6,7 +6,7 @@ function Selection(props) {
   const { setComputerChoice, choices, playerChoice,computerChoice } = props
   const randomIdx = Math.floor(Math.random() * choices.length);
 
-  const pSelection = choices.find((choice) => playerChoice === choice.name);
+  
 
   useEffect(() => {
     setTimeout(() => {

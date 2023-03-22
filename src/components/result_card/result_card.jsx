@@ -2,7 +2,9 @@ import React from 'react'
 
 export default function ResultCard(props) {
 
-  const {playerChoice, computerChoice} = props;
+  const {playerChoice, computerChoice, choices} = props;
+  const pSelection = choices.find((choice) => playerChoice === choice.name);
+
   //  const playerWins = (cChoice) => {
   //    console.log("ps", pSelection.beats === cChoice.name);
   //    console.log("pchoice", pChoice, "cchoice", cChoice.name);
