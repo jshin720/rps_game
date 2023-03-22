@@ -56,6 +56,8 @@ function Home_card() {
             setPlayerChoice={setPlayerChoice}
             selected={setSelected}
             setSwitchCard={setSwitchCard}
+            score={score}
+            setScore={setScore}
           />
         );
     }

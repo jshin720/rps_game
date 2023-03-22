@@ -4,7 +4,7 @@ import Selection from "../selection/selection";
 function MainCard(props) {
   
   
-  // const [winner, setWinner] = useState("");
+ 
  
     // const {selected, setPlayerChoice} = props;
     console.log("main", props)
