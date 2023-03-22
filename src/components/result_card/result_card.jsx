@@ -5,20 +5,22 @@ export default function ResultCard(props) {
   const {playerChoice, computerChoice, choices} = props;
   const pSelection = choices.find((choice) => playerChoice === choice.name);
 
-  //  const playerWins = (cChoice) => {
-  //    console.log("ps", pSelection.beats === cChoice.name);
-  //    console.log("pchoice", pChoice, "cchoice", cChoice.name);
+   const playerWins = (computerChoice) => {
+     console.log("ps", pSelection.beats === computerChoice.name);
+     console.log("pchoice", playerChoice, "cchoice", computerChoice.name);
 
-  //    if (pSelection.beats === cChoice.name) {
-  //      setWinner("Won");
-  //      setScore(score++);
-  //    } else if (pChoice === cChoice.name) {
-  //      setWinner("Draw");
-  //    } else if (cChoice.beats === pChoice) {
-  //      setWinner("Lost");
-  //    }
-  //  };
-  
+     if (pSelection.beats === computerChoice.name) {
+       setWinner("Won");
+       setScore(score++);
+     } else if (playerChoice === computerChoice.name) {
+       setWinner("Draw");
+     } else if (cChoice.beats === playerChoice) {
+       setWinner("Lost");
+     }
+   };
+    const handleClick = () => {
+      props.setSwitchCard("main")
+    }
 
     const winOrLose = (winner) => {
       console.log("winner", winner);
