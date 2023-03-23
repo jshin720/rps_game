@@ -3,9 +3,9 @@ import React, {useState} from 'react'
 export default function ResultCard(props) {
   const [winner, setWinner] = useState("");
   const { playerChoice, computerChoice, choices, setScore } = props;
-  const pSelection = choices.find((choice) => playerChoice === choice.name);
-
-  const playerWins = (pSelection, computerChoice) => {
+  
+  const playerWins = (playerChoice, computerChoice) => {
+    const pSelection = choices.find((choice) => playerChoice === choice.name);
     console.log("ps", pSelection.beats === computerChoice.name);
     console.log("pchoice", playerChoice, "cchoice", computerChoice.name);
 
