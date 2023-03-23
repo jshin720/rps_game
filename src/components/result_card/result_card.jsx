@@ -7,7 +7,7 @@ export default function ResultCard(props) {
 
   const playerWins = (computerChoice) => {
     console.log("ps", pSelection.beats === computerChoice.name);
-    console.log("pchoice", playerChoice, "cchoice", computerChoice.name);
+    // console.log("pchoice", playerChoice, "cchoice", computerChoice.name);
 
     if (pSelection.beats === computerChoice.name) {
       setWinner("Won");
@@ -22,10 +22,14 @@ export default function ResultCard(props) {
     props.setSwitchCard("main");
   };
 
-  const winOrLose = (winner) => {
-    console.log("winner", winner);
-    return (
-      <div>
+  // const winOrLose = (winner) => {
+  //   console.log("winner", winner);
+  //   return (
+      
+  //   );
+  // };
+
+  return <div>
         <div>
           <h4>You Picked</h4>
           <span>{`${playerChoice}`}</span>
@@ -38,9 +42,5 @@ export default function ResultCard(props) {
           <h4>The House Picked</h4>
           <span>{`${computerChoice.name}`}</span>
         </div>
-      </div>
-    );
-  };
-
-  return <div>result_card</div>;
+      </div>;
 }
