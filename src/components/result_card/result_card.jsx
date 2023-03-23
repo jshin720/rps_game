@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 export default function ResultCard(props) {
   const [winner, setWinner] = useState("");
-  const { playerChoice, computerChoice, choices, score, setScore } = props;
+   const { playerChoice, computerChoice, choices, setScore } = props;
   const pSelection = choices.find((choice) => playerChoice === choice.name);
 
   const playerWins = (computerChoice) => {
@@ -11,7 +11,7 @@ export default function ResultCard(props) {
 
     if (pSelection.beats === computerChoice.name) {
       setWinner("Won");
-      setScore(score++);
+      setScore(props.score++);
     } else if (playerChoice === computerChoice.name) {
       setWinner("Draw");
     } else if (computerChoice.beats === playerChoice) {
@@ -36,7 +36,7 @@ export default function ResultCard(props) {
         </div>
         <div>
           <h1>{`You ${winner}`}</h1>
-          <button>Play Again</button>
+          <button onClick={handleClick}>Play Again</button>
         </div>
         <div>
           <h4>The House Picked</h4>

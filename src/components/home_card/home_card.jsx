@@ -10,58 +10,59 @@ function Home_card() {
   const [playerChoice, setPlayerChoice] = useState("");
   const [computerChoice, setComputerChoice] = useState("");
   const [selected, setSelected] = useState(false);
-  const [switchCard, setSwitchCard] = useState("")
+  const [switchCard, setSwitchCard] = useState("");
 
-   const choices = [
-     {
-       name: "paper",
-       beats: "rock",
-     },
-     {
-       name: "scissor",
-       beats: "paper",
-     },
-     {
-       name: "rock",
-       beats: "scissor",
-     },
-   ];
+  const choices = [
+    {
+      name: "paper",
+      beats: "rock",
+    },
+    {
+      name: "scissor",
+      beats: "paper",
+    },
+    {
+      name: "rock",
+      beats: "scissor",
+    },
+  ];
 
-   let component;
-    switch (switchCard) {
-      case "selected":
-        component = <Selection
-            setComputerChoice={setComputerChoice}
-            setEnded={setEnded}
-            computerChoice={computerChoice}
-            playerChoice={playerChoice}
-            choices={choices}
-            setSwitchCard={setSwitchCard}
-          />
-        break;
-      case "result":
-        component = (
-          <ResultCard
-            playerChoice={playerChoice}
-            computerChoice={computerChoice}
-            setEnded={setEnded}
-            choices={choices}
-            setSwitchCard={setSwitchCard}
-          />
-        );
-        break
-      default:
-        component = (
-          <MainCard
-            setPlayerChoice={setPlayerChoice}
-            selected={setSelected}
-            setSwitchCard={setSwitchCard}
-            score={score}
-            setScore={setScore}
-          />
-        );
-    }
-
+  let component;
+  switch (switchCard) {
+    case "selected":
+      component = (
+        <Selection
+          setComputerChoice={setComputerChoice}
+          setEnded={setEnded}
+          computerChoice={computerChoice}
+          playerChoice={playerChoice}
+          choices={choices}
+          setSwitchCard={setSwitchCard}
+        />
+      );
+      break;
+    case "result":
+      component = (
+        <ResultCard
+          playerChoice={playerChoice}
+          computerChoice={computerChoice}
+          setEnded={setEnded}
+          choices={choices}
+          setSwitchCard={setSwitchCard}
+        />
+      );
+      break;
+    default:
+      component = (
+        <MainCard
+          setPlayerChoice={setPlayerChoice}
+          selected={setSelected}
+          setSwitchCard={setSwitchCard}
+          score={score}
+          setScore={setScore}
+        />
+      );
+  }
 
   return (
     <div>
