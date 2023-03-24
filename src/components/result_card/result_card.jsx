@@ -22,12 +22,12 @@ export default function ResultCard(props) {
     props.setSwitchCard("main");
   };
 
-  // const winOrLose = (winner) => {
-  //   console.log("winner", winner);
-  //   return (
+  const winOrLose = (winner) => {
+    console.log("winner", winner);
+    return (
       
-  //   );
-  // };
+    );
+  };
 
   return <div>
         <div>
