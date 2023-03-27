@@ -6,22 +6,23 @@ function Selection(props) {
   const { setComputerChoice, choices, playerChoice,computerChoice, setSwitchCard } = props
   const randomIdx = Math.floor(Math.random() * choices.length);
 
-  
+  let selectionSwitch = false;
 
   useEffect(() => {
     setTimeout(() => {
-      if (!computerChoice) {
+      if (!selectionSwitch) {
         setComputerChoice(choices[randomIdx]); // getting what the computer chooses
-        setSwitchCard("result")
+        selectionSwitch = true;
+        setSwitchCard("result");
         // console.log("random", randomIdx);
-        // console.log("cchoice", computerChoice);
+        console.log("cchoice", computerChoice);
       }
-    }, 3000);
+    }, 2000);
   });
 
   return (
     <>
-      {!computerChoice ? (
+      {!selectionSwitch ? (
         <div>
           <div>
             <h4>You Picked</h4>
