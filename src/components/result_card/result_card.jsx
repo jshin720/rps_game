@@ -4,9 +4,9 @@ export default function ResultCard(props) {
   const [winner, setWinner] = useState("");
   const { playerChoice, computerChoice, choices, setScore } = props;
 
-  //  console.log("ps", pSelection.beats === computerChoice.name);
-  //  console.log("pchoice", playerChoice, "cchoice", computerChoice.name);
-  //  console.log("result props", props)
+   console.log("ps", pSelection.beats === computerChoice.name);
+   console.log("pchoice", playerChoice, "cchoice", computerChoice.name);
+   console.log("result props", props)
   
   const playerWins = (playerChoice, computerChoice) => {
     console.log("choices", choices)
