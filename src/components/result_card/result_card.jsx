@@ -3,15 +3,18 @@ import React, {useState} from 'react'
 export default function ResultCard(props) {
   const [winner, setWinner] = useState("");
   const { playerChoice, computerChoice, choices, setScore } = props;
-
-   console.log("ps", pSelection.beats === computerChoice.name);
-   console.log("pchoice", playerChoice, "cchoice", computerChoice.name);
-   console.log("result props", props)
   
-  const playerWins = (playerChoice, computerChoice) => {
-    console.log("choices", choices)
-    const pSelection = choices.find((choice) => playerChoice === choice.name);
-    
+  console.log("choices", choices)
+  const pSelection = choices.find((choice) => playerChoice === choice.name);
+   console.log("ps", pSelection.beats === computerChoice.name);
+   console.log("result props", props)
+   
+
+
+   
+   const playerWins = (pSelection, playerChoice, computerChoice) => {
+     
+     console.log("pchoice", playerChoice, "cchoice", computerChoice.name, "pSelction", pSelection);
 
     if (pSelection.beats === computerChoice.name) {
       setWinner("Won");
