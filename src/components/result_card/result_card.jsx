@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 export default function ResultCard(props) {
   const [winner, setWinner] = useState("");
@@ -10,8 +10,13 @@ export default function ResultCard(props) {
    console.log("result props", props)
    
 
+  useEffect(() => {
+    if (!winner) {
+      playerWins();
+    }
+  },[])
 
-   
+
    const playerWins = (pSelection, playerChoice, computerChoice) => {
      
      console.log("pchoice", playerChoice, "cchoice", computerChoice.name, "pSelction", pSelection);
