@@ -11,24 +11,32 @@ export default function ResultCard(props) {
    
 
   useEffect(() => {
-    if (!winner) {
-      playerWins();
-    }
+    // if (!winner) {
+    //   playerWins();
+    // }
+    console.log(
+      "pchoice",
+      playerChoice,
+      "cchoice",
+      computerChoice.name,
+      "pSelction",
+      pSelection
+    );
   },[])
 
 
    const playerWins = (pSelection, playerChoice, computerChoice) => {
      
-     console.log("pchoice", playerChoice, "cchoice", computerChoice.name, "pSelction", pSelection);
+     
 
-    if (pSelection.beats === computerChoice.name) {
-      setWinner("Won");
-      setScore(props.score++);
-    } else if (playerChoice === computerChoice.name) {
-      setWinner("Draw");
-    } else if (computerChoice.beats === playerChoice) {
-      setWinner("Lost");
-    }
+    // if (pSelection.beats === computerChoice.name) {
+    //   setWinner("Won");
+    //   setScore(props.score++);
+    // } else if (playerChoice === computerChoice.name) {
+    //   setWinner("Draw");
+    // } else if (computerChoice.beats === playerChoice) {
+    //   setWinner("Lost");
+    // }
   };
   const handleClick = () => {
    
