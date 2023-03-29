@@ -14,6 +14,7 @@ export default function ResultCard(props) {
     // if (!winner) {
     //   playerWins();
     // }
+    playerWins()
     console.log(
       "pchoice",
       playerChoice,
@@ -27,16 +28,14 @@ export default function ResultCard(props) {
 
    const playerWins = (pSelection, playerChoice, computerChoice) => {
      
-     
-
-    // if (pSelection.beats === computerChoice.name) {
-    //   setWinner("Won");
-    //   setScore(props.score++);
-    // } else if (playerChoice === computerChoice.name) {
-    //   setWinner("Draw");
-    // } else if (computerChoice.beats === playerChoice) {
-    //   setWinner("Lost");
-    // }
+    if (pSelection.beats === computerChoice.name) {
+      setWinner("Won");
+      setScore(props.score++);
+    } else if (playerChoice === computerChoice.name) {
+      setWinner("Draw");
+    } else if (computerChoice.beats === playerChoice) {
+      setWinner("Lost");
+    }
   };
   const handleClick = () => {
    
