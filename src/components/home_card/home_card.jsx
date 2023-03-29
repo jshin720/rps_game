@@ -49,6 +49,7 @@ function Home_card() {
           setEnded={setEnded}
           choices={choices}
           setSwitchCard={setSwitchCard}
+          score={score}
         />
       );
       break;
@@ -59,7 +60,6 @@ function Home_card() {
           selected={setSelected}
           setSwitchCard={setSwitchCard}
           score={score}
-          setScore={setScore}
         />
       );
   }
