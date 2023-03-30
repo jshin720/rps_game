@@ -14,14 +14,14 @@ export default function ResultCard(props) {
     //   playerWins();
     // }
     playerWins();
-    console.log(
-      "pchoice",
-      playerChoice,
-      "cchoice",
-      computerChoice.name,
-      "pSelction",
-      pSelection
-    );
+    // console.log(
+    //   "pchoice",
+    //   playerChoice,
+    //   "cchoice",
+    //   computerChoice.name,
+    //   "pSelction",
+    //   pSelection
+    // );
   }, []);
 
   const playerWins = (pSelection, playerChoice, computerChoice) => {
