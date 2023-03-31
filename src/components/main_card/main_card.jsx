@@ -7,7 +7,7 @@ function MainCard(props) {
  
  
     // const {selected, setPlayerChoice} = props;
-    console.log("main", props)
+    // console.log("main", props)
 
  
 
