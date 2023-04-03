@@ -9,20 +9,20 @@ export default function ResultCard(props) {
   // console.log("ps", pSelection.beats === computerChoice.name);
   // console.log("result props", props);
 
-  // useEffect(() => {
-  //   // if (!winner) {
-  //   //   playerWins();
-  //   // }
-  //   playerWins();
-  //   console.log(
-  //     "pchoice",
-  //     playerChoice,
-  //     "cchoice",
-  //     computerChoice.name,
-  //     "pSelction",
-  //     pSelection
-  //   );
-  // }, []);
+  useEffect(() => {
+    // if (!winner) {
+    //   playerWins();
+    // }
+    playerWins();
+    console.log(
+      "pchoice",
+      playerChoice,
+      "cchoice",
+      computerChoice.name,
+      "pSelction",
+      pSelection
+    );
+  }, []);
 
   const playerWins = (pSelection, playerChoice, computerChoice) => {
     if (pSelection.beats === computerChoice.name) {
