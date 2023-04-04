@@ -1,4 +1,4 @@
-// import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function ResultCard(props) {
   const [winner, setWinner] = useState("");
@@ -27,7 +27,7 @@ export default function ResultCard(props) {
   const playerWins = (pSelection, playerChoice, computerChoice) => {
     if (pSelection.beats === computerChoice.name) {
       setWinner("Won");
-      score.current + 1;
+      score.current = score.current + 1;
     } else if (playerChoice === computerChoice.name) {
       setWinner("Draw");
     } else if (computerChoice.beats === playerChoice) {

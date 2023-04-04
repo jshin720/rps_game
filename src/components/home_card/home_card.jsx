@@ -12,6 +12,8 @@ function Home_card() {
   const [switchCard, setSwitchCard] = useState("");
   const score = useRef(0);
 
+  console.log("useref", score)
+
   const choices = [
     {
       name: "paper",
