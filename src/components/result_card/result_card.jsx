@@ -9,16 +9,16 @@ export default function ResultCard(props) {
   // console.log("ps", pSelection.beats === computerChoice.name);
   console.log("result props", props);
 
-  const playerWins = (pSelection, playerChoice, computerChoice) => {
-    if (pSelection.beats === computerChoice.name) {
-      setWinner("Won");
-      score.current = score.current + 1;
-    } else if (playerChoice === computerChoice.name) {
-      setWinner("Draw");
-    } else if (computerChoice.beats === playerChoice) {
-      setWinner("Lost");
-    }
-  };
+  // const playerWins = (pSelection, playerChoice, computerChoice) => {
+  //   if (pSelection.beats === computerChoice.name) {
+  //     setWinner("Won");
+  //     score.current = score.current + 1;
+  //   } else if (playerChoice === computerChoice.name) {
+  //     setWinner("Draw");
+  //   } else if (computerChoice.beats === playerChoice) {
+  //     setWinner("Lost");
+  //   }
+  // };
   // useEffect(() => {
   //   if (!winner) {
   //     playerWins();
