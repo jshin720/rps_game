@@ -6,23 +6,8 @@ export default function ResultCard(props) {
 
   console.log("choices", choices);
   const pSelection = choices.find((choice) => playerChoice === choice.name);
-  console.log("ps", pSelection.beats === computerChoice.name);
+  // console.log("ps", pSelection.beats === computerChoice.name);
   console.log("result props", props);
-
-  useEffect(() => {
-    if (!winner) {
-      playerWins();
-    }
-    // playerWins();
-    // console.log(
-    //   "pchoice",
-    //   playerChoice,
-    //   "cchoice",
-    //   computerChoice.name,
-    //   "pSelction",
-    //   pSelection
-    // );
-  }, []);
 
   const playerWins = (pSelection, playerChoice, computerChoice) => {
     if (pSelection.beats === computerChoice.name) {
@@ -34,6 +19,21 @@ export default function ResultCard(props) {
       setWinner("Lost");
     }
   };
+  // useEffect(() => {
+  //   if (!winner) {
+  //     playerWins();
+  //   }
+  //   // playerWins();
+  //   // console.log(
+  //   //   "pchoice",
+  //   //   playerChoice,
+  //   //   "cchoice",
+  //   //   computerChoice.name,
+  //   //   "pSelction",
+  //   //   pSelection
+  //   // );
+  // }, []);
+
   const handleClick = () => {
     props.setSwitchCard("main");
   };
