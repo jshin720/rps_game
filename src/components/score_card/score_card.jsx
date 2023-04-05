@@ -15,7 +15,7 @@ function ScoreCard(props) {
           </ul>
         </span>
         <span className="score-holder">
-          <h4>score {`${score}`}</h4>
+          <h4>score {`${score.current}`}</h4>
         </span>
     </div>
   );
