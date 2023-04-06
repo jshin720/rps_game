@@ -12,7 +12,7 @@ function Home_card() {
   const [switchCard, setSwitchCard] = useState("");
   const score = useRef(0);
 
-  console.log("useref", score)
+  console.log("useref - 1", score)
 
   const choices = [
     {
@@ -48,6 +48,8 @@ function Home_card() {
         <ResultCard
           playerChoice={playerChoice}
           computerChoice={computerChoice}
+          setPlayerChoice={setPlayerChoice}
+          setComputerChoice={setComputerChoice}
           setEnded={setEnded}
           choices={choices}
           setSwitchCard={setSwitchCard}

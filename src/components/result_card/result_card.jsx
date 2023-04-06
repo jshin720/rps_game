@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export default function ResultCard(props) {
   const [winner, setWinner] = useState("");
-  const { playerChoice, computerChoice, choices, score } = props;
+  const { playerChoice, computerChoice, choices, score, setComputerChoice, setPlayerChoice, setSwitchCard } = props;
 
   console.log("choices", choices);
   const pSelection = choices.find((choice) => playerChoice === choice.name);
@@ -19,23 +19,12 @@ export default function ResultCard(props) {
   //     setWinner("Lost");
   //   }
   // };
-  // useEffect(() => {
-  //   if (!winner) {
-  //     playerWins();
-  //   }
-  //   // playerWins();
-  //   // console.log(
-  //   //   "pchoice",
-  //   //   playerChoice,
-  //   //   "cchoice",
-  //   //   computerChoice.name,
-  //   //   "pSelction",
-  //   //   pSelection
-  //   // );
-  // }, []);
+ 
 
   const handleClick = () => {
-    props.setSwitchCard("main");
+    setPlayerChoice("")
+    setComputerChoice("")
+    setSwitchCard("main");
   };
 
   // const winOrLose = (winner) => {

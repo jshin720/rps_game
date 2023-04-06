@@ -18,7 +18,7 @@ function Selection(props) {
         console.log("cchoice", computerChoice);
       }
     }, 2000);
-  });
+  },[selectionSwitch]);
 
   return (
     <>
