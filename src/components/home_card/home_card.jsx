@@ -10,7 +10,7 @@ function Home_card() {
   const [computerChoice, setComputerChoice] = useState("");
   const [selected, setSelected] = useState(false);
   const [switchCard, setSwitchCard] = useState("");
-  const score = useRef(0);
+  let score = useRef(0);
 
   console.log("useref - 1", score)
 
