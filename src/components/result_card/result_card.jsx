@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export default function ResultCard(props) {
-  const [winner, setWinner] = useState("");
+
   const {
     playerChoice,
     computerChoice,
@@ -16,12 +16,20 @@ export default function ResultCard(props) {
   const pSelection = choices.find((choice) => playerChoice === choice.name);
   console.log("ps", pSelection.beats === computerChoice.name);
   console.log("result props", props);
+  
+  const handleClick = () => {
+    setPlayerChoice("");
+    setComputerChoice("");
+    setSwitchCard("main");
+  };
+
 
   const gameResult = () => {
     console.log("inside gameresult", choices, computerChoice, playerChoice)
     if (pSelection.beats === computerChoice.name) {
-      setWinner("Won");
+    
       score.current = score.current + 1;
+      console.log("score-result", score);
       return (
         <div>
           <div>
@@ -29,7 +37,7 @@ export default function ResultCard(props) {
             <span>{`${playerChoice}`}</span>
           </div>
           <div>
-            <h1>{`You ${winner}`}</h1>
+            <h1>You Won</h1>
             <button onClick={handleClick}>Play Again</button>
           </div>
           <div>
@@ -39,7 +47,7 @@ export default function ResultCard(props) {
         </div>
       );
     } else if (playerChoice === computerChoice.name) {
-      setWinner("Draw");
+     
       return (
         <div>
           <div>
@@ -47,7 +55,7 @@ export default function ResultCard(props) {
             <span>{`${playerChoice}`}</span>
           </div>
           <div>
-            <h1>{`You ${winner}`}</h1>
+            <h1>Draw</h1>
             <button onClick={handleClick}>Play Again</button>
           </div>
           <div>
@@ -57,7 +65,7 @@ export default function ResultCard(props) {
         </div>
       );
     } else if (computerChoice.beats === playerChoice) {
-      setWinner("Lost");
+      
       return (
         <div>
           <div>
@@ -65,7 +73,7 @@ export default function ResultCard(props) {
             <span>{`${playerChoice}`}</span>
           </div>
           <div>
-            <h1>{`You ${winner}`}</h1>
+            <h1>You Lose</h1>
             <button onClick={handleClick}>Play Again</button>
           </div>
           <div>
@@ -77,17 +85,6 @@ export default function ResultCard(props) {
     }
   };
 
-  const handleClick = () => {
-    setPlayerChoice("");
-    setComputerChoice("");
-    setSwitchCard("main");
-  };
-
-  // const winOrLose = (winner) => {
-  //
-
-  // };
-  console.log("winner", winner);
 
   return (
     <>
