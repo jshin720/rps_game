@@ -10,7 +10,7 @@ function Home_card() {
   const [computerChoice, setComputerChoice] = useState("");
   const [selected, setSelected] = useState(false);
   const [switchCard, setSwitchCard] = useState("");
-  let score = useRef(0);
+  const [score, setScore] = useState(0);
 
   console.log("useref - 1", score)
 
@@ -50,7 +50,7 @@ function Home_card() {
           computerChoice={computerChoice}
           setPlayerChoice={setPlayerChoice}
           setComputerChoice={setComputerChoice}
-          setEnded={setEnded}
+          setScore={setScore}
           choices={choices}
           setSwitchCard={setSwitchCard}
           score={score}
