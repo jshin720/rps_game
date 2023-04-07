@@ -10,6 +10,7 @@ export default function ResultCard(props) {
     setComputerChoice,
     setPlayerChoice,
     setSwitchCard,
+    setScore
   } = props;
 
   console.log("choices", choices);
@@ -27,8 +28,8 @@ export default function ResultCard(props) {
   const gameResult = () => {
     console.log("inside gameresult", choices, computerChoice, playerChoice)
     if (pSelection.beats === computerChoice.name) {
-    
-      score.current = score.current + 1;
+      let currentScore = score + 1;
+      setScore(currentScore);      
       console.log("score-result", score);
       return (
         <div>

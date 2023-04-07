@@ -4,7 +4,7 @@ import React from "react";
 function ScoreCard(props) {
   console.log("scorecard", props);
   let { score } = props;
-  let currentScore = score.current;
+  
   return (
     <div>
       <span>
@@ -15,7 +15,7 @@ function ScoreCard(props) {
         </ul>
       </span>
       <span className="score-holder">
-        <h4>score {`${currentScore}`}</h4>
+        <h4>score {`${score}`}</h4>
       </span>
     </div>
   );

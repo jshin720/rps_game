@@ -10,7 +10,7 @@ function Selection(props) {
 
   useEffect(() => {
     setTimeout(() => {
-      if (!selectionSwitch) {
+      if (!computerChoice) {
         setComputerChoice(choices[randomIdx]); // getting what the computer chooses
         selectionSwitch = true;
         setSwitchCard("result");
@@ -18,7 +18,7 @@ function Selection(props) {
         console.log("cchoice", computerChoice);
       }
     }, 2000);
-  },[selectionSwitch]);
+  },[!computerChoice]);
 
   return (
     <>
