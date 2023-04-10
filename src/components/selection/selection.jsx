@@ -9,7 +9,7 @@ function Selection(props) {
   let selectionSwitch = false;
 
   useEffect(() => {
-    // console.log("test useeffect")
+    console.log("test useeffect")
     setTimeout(() => {
       if (!computerChoice) {
         setComputerChoice(choices[randomIdx]); // getting what the computer chooses
