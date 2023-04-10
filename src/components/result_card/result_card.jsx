@@ -28,8 +28,8 @@ export default function ResultCard(props) {
   const gameResult = () => {
     console.log("inside gameresult", choices, computerChoice, playerChoice)
     if (pSelection.beats === computerChoice.name) {
-      let currentScore = score + 1;
-      setScore(currentScore);      
+      
+      setScore((score) => score + 1);      
       console.log("score-result", score);
       return (
         <div>

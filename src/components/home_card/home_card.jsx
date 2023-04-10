@@ -12,7 +12,7 @@ function Home_card() {
   const [switchCard, setSwitchCard] = useState("");
   const [score, setScore] = useState(0);
 
-  console.log("useref - 1", score)
+  
 
   const choices = [
     {
@@ -30,6 +30,7 @@ function Home_card() {
   ];
 
   let component;
+  console.log("test")
   switch (switchCard) {
     case "selected":
       component = (
@@ -63,7 +64,6 @@ function Home_card() {
           setPlayerChoice={setPlayerChoice}
           selected={setSelected}
           setSwitchCard={setSwitchCard}
-          score={score}
         />
       );
   }
