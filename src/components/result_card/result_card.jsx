@@ -18,11 +18,11 @@ export default function ResultCard(props) {
   console.log("ps", pSelection.beats === computerChoice.name);
   console.log("result props", props);
   
-  const handleClick = () => {
-    setPlayerChoice("");
-    setComputerChoice("");
-    setSwitchCard("main");
-  };
+  // const handleClick = () => {
+  //   setPlayerChoice("");
+  //   setComputerChoice("");
+  //   setSwitchCard("main");
+  // };
 
 
   const gameResult = () => {
