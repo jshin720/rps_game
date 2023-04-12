@@ -18,19 +18,19 @@ export default function ResultCard(props) {
   console.log("ps", pSelection.beats === computerChoice.name);
   console.log("result props", props);
   
-  // const handleClick = () => {
-  //   setPlayerChoice("");
-  //   setComputerChoice("");
-  //   setSwitchCard("main");
-  // };
+  const handleClick = () => {
+    setPlayerChoice("");
+    setComputerChoice("");
+    setSwitchCard("main");
+  };
 
 
   const gameResult = () => {
     console.log("inside gameresult", choices, computerChoice, playerChoice)
     if (pSelection.beats === computerChoice.name) {
       
-      setScore((score) => score + 1);      
-      console.log("score-result", score);
+      // setScore((score) => score + 1);      
+      // console.log("score-result", score);
       return (
         <div>
           <div>
