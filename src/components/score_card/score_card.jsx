@@ -2,7 +2,7 @@ import React from "react";
 
 
 function ScoreCard(props) {
-  // console.log("scorecard", props);
+  console.log("scorecard", props);
   let { score } = props;
   
   return (
