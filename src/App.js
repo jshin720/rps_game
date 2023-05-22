@@ -20,17 +20,41 @@ function App() {
   const [computerPoints, setComputerPoints] = useState(0);  
   const [turnResults, setTurnResults] = useState("");  
   const [result, setResult] = useState('');  
-  const [gameOver, setGameOver] = useState(false);  
+  const [gameOver, setGameOver] = useState(false); 
+  
+   const choices = [
+     {
+       name: "paper",
+       beats: "rock",
+     },
+     {
+       name: "scissor",
+       beats: "paper",
+     },
+     {
+       name: "rock",
+       beats: "scissor",
+     },
+   ];
+
 
   return (
     <div className="App">
-      
+      <h1 className="heading"> Rock Paper Scissor</h1>
+      <div className="score">
+        <ScoreCard
+         userPoints={userPoints}
+         computerPoints={computerPoints}
+        ></ScoreCard>
+      </div>
+
+{/*       
       <Routes>
         <Route path="/" element={<HomeCard/>}/>
         <Route path="/mainCard" element={<MainCard/>} />
         <Route path="/selection" element={<Selection/>} />
         <Route path="/results" element={<ResultsCard/>} />
-      </Routes>
+      </Routes> */}
     </div>
   );
 }
