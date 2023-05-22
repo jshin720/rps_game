@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {
   BrowserRouter,
   BrowserRouter as Router,
@@ -14,6 +14,14 @@ import ResultsCard from "./components/result_card/result_card";
 import HomeCard from "./components/home_card/home_card";
 
 function App() {
+  const [userChoice, setUserChoice] = useState('');
+  const [computerChoice, setComputerChoice] = useState('');  
+  const [userPoints, setUserPoints] = useState(0);  
+  const [computerPoints, setComputerPoints] = useState(0);  
+  const [turnResults, setTurnResults] = useState("");  
+  const [result, setResult] = useState('');  
+  const [gameOver, setGameOver] = useState(false);  
+
   return (
     <div className="App">
       
