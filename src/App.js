@@ -49,6 +49,10 @@ function App() {
     setComputerChoice(choices[randomIdx]);
   }
 
+  const reset = () => {
+    window.location.reload
+  }
+
   return (
     <div className="App">
       <ScoreCard
@@ -74,6 +78,18 @@ function App() {
            {choice.name}
           </button>
         )}
+      </div>
+      
+      <div className="result">
+          <h1>Turn Result: {turnResults}</h1>
+          <h1>Final Result: {result}</h1>
+      </div>
+
+      <div className="button-div">
+          {gameOver && 
+           <button className="button"  onClick={() => reset()} >Restart Game</button>
+          }
+
       </div>
 
       {/*       
