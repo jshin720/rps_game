@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
+  generatePath,
 } from "react-router-dom";
 
 import "./App.css";
@@ -39,7 +40,13 @@ function App() {
 
 
   const handleClick = (choice) => {
-    
+    setUserChoice(choice);
+    generateComputerChoice();
+  }
+
+  const generateComputerChoice = () => {
+    const randomChoice = Math.floor(Math.random() * choices.length);
+    setComputerChoice(choices[randomIdx]);
   }
 
   return (
