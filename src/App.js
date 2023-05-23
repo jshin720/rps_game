@@ -37,13 +37,37 @@ function App() {
     },
   ];
 
+
+  const handleClick = (choice) => {
+    
+  }
+
   return (
     <div className="App">
       <ScoreCard
         userPoints={userPoints}
         computerPoints={computerPoints}
       ></ScoreCard>
-      <HomeCard/>
+      <div className="choices">
+        <div className="choice-user">
+          <img className="user-hand" src={`../images/${userChoice.name}`}>
+            {" "}
+          </img>
+        </div>
+        <div className="computer-user">
+          <img className="computer-hand" src={`../images/${computerChoice.name}`}>
+            {" "}
+          </img>
+        </div>
+      </div>
+
+      <div>
+        {choices.map((choice, idx) => 
+          <button className="" key={idx} onClick={() => handleClick(choice)}> 
+           {choice.name}
+          </button>
+        )}
+      </div>
 
       {/*       
       <Routes>
