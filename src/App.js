@@ -50,8 +50,10 @@ function App() {
   }
 
   const reset = () => {
-    window.location.reload
+    window.location.reload() /// refreshes the page when set to true
   }
+
+  use 
 
   return (
     <div className="App">
