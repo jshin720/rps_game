@@ -55,7 +55,17 @@ function App() {
 
   useEffect(() => {
     const comboMoves= userChoice + computerChoice;
-  })
+    if (userPoints <= 4 && computerPoints <=4) {
+      if (comboMoves === 'rockscissors' || comboMoves === "paperrock" || comboMoves == "paperscissors")
+      const updateUserPoints= userPoints + 1;
+      setUserPoints(updateUserPoints);
+      setTurnResults("You Win!");
+      if (updateUserPoints === 5) {
+        setGameOver(true)
+        setResult('You Win!')
+      }
+    }
+  },[])
 
   return (
     <div className="App">
