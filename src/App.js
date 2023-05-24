@@ -53,7 +53,9 @@ function App() {
     window.location.reload() /// refreshes the page when set to true
   }
 
-  use 
+  useEffect(() => {
+    const comboMoves= userChoice + computerChoice;
+  })
 
   return (
     <div className="App">
