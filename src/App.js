@@ -56,13 +56,17 @@ function App() {
   useEffect(() => {
     const comboMoves= userChoice + computerChoice;
     if (userPoints <= 4 && computerPoints <=4) {
-      if (comboMoves === 'rockscissors' || comboMoves === "paperrock" || comboMoves == "paperscissors")
+      if (comboMoves === 'rockscissors' || comboMoves === "paperrock" || comboMoves == "scissorspaper"){
       const updateUserPoints= userPoints + 1;
       setUserPoints(updateUserPoints);
       setTurnResults("You Win!");
-      if (updateUserPoints === 5) {
-        setGameOver(true)
-        setResult('You Win!')
+        if (updateUserPoints === 5) {
+          setGameOver(true)
+          setResult('You Win!')
+        }
+      }
+      if (comboMoves === 'paperscissors' || comboMoves === "scissorsrock" || comboMoves == "rockpaper") {
+
       }
     }
   },[])
