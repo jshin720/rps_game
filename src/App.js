@@ -58,14 +58,23 @@ function App() {
     if (userPoints <= 4 && computerPoints <=4) {
       if (comboMoves === 'rockscissors' || comboMoves === "paperrock" || comboMoves == "scissorspaper"){
       const updateUserPoints= userPoints + 1;
-      setUserPoints(updateUserPoints);
-      setTurnResults("You Win!");
+      setUserPoints(updateUserPoints)
+      setTurnResults("You Win!")
         if (updateUserPoints === 5) {
           setGameOver(true)
           setResult('You Win!')
         }
       }
       if (comboMoves === 'paperscissors' || comboMoves === "scissorsrock" || comboMoves == "rockpaper") {
+        const updateComputerPoints = computerPoints + 1
+        setComputerPoints(updateComputerPoints)
+        setTurnResults("Computer got the points")
+        if (updateComputerPoints === 5) {
+          setGameOver(true)
+          setResult('Computer Wins!')
+        }
+      }
+      if (comboMoves === 'rockrock' || comboMoves === "scissorsscissors" || comboMoves == "paperpaper") {
 
       }
     }
