@@ -75,10 +75,10 @@ function App() {
         }
       }
       if (comboMoves === 'rockrock' || comboMoves === "scissorsscissors" || comboMoves == "paperpaper") {
-
+        setTurnResults("It's a tie!")
       }
     }
-  },[])
+  },[userChoice, computerChoice])
 
   return (
     <div className="App">
