@@ -16,7 +16,7 @@ function Selection(props) {
         selectionSwitch = true;
         setSwitchCard("result");
         // console.log("random", randomIdx);
-        // console.log("cchoice", computerChoice);
+        console.log("cchoice", computerChoice);
       }
     }, 2000);
   },[computerChoice]);
