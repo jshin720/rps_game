@@ -45,7 +45,7 @@ function App() {
   }
 
   const generateComputerChoice = () => {
-    const randomChoice = Math.floor(Math.random() * choices.length);
+    const randomIdx = Math.floor(Math.random() * choices.length);
     setComputerChoice(choices[randomIdx]);
   }
 
@@ -99,7 +99,7 @@ function App() {
         </div>
       </div>
 
-      <div>
+      <div children="button-container">
         {choices.map((choice, idx) => 
           <button className="" key={idx} onClick={() => handleClick(choice)}> 
            {choice.name}
