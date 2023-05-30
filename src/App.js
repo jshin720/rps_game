@@ -91,13 +91,13 @@ function App() {
           {/* <img className="user-hand" src={`../images/${userChoice.name}`}>
             {" "}
           </img> */}
-          <h1>{`${userChoice}`}</h1>
+          <h1>{`${userChoice.name}`}</h1>
         </div>
         <div className="computer-user">
           {/* <img className="computer-hand" src={`../images/${computerChoice.name}`}>
             {" "}
           </img> */}
-          <h1>{`${computerChoice}`}</h1>
+          <h1>{`${computerChoice.name}`}</h1>
         </div>
       </div>
 
