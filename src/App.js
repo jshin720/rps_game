@@ -88,35 +88,38 @@ function App() {
       ></ScoreCard>
       <div className="choices">
         <div className="choice-user">
-          <img className="user-hand" src={`../images/${userChoice.name}`}>
+          {/* <img className="user-hand" src={`../images/${userChoice.name}`}>
             {" "}
-          </img>
+          </img> */}
+          <h1>`${userChoice.name}`</h1>
         </div>
         <div className="computer-user">
-          <img className="computer-hand" src={`../images/${computerChoice.name}`}>
+          {/* <img className="computer-hand" src={`../images/${computerChoice.name}`}>
             {" "}
-          </img>
+          </img> */}
+          <h1>`${computerChoice.name}`</h1>
         </div>
       </div>
 
       <div children="button-container">
-        {choices.map((choice, idx) => 
-          <button className="" key={idx} onClick={() => handleClick(choice)}> 
-           {choice.name}
+        {choices.map((choice, idx) => (
+          <button className="" key={idx} onClick={() => handleClick(choice)}>
+            {choice.name}
           </button>
-        )}
+        ))}
       </div>
-      
+
       <div className="result">
-          <h1>Turn Result: {turnResults}</h1>
-          <h1>Final Result: {result}</h1>
+        <h1>Turn Result: {turnResults}</h1>
+        <h1>Final Result: {result}</h1>
       </div>
 
       <div className="button-div">
-          {gameOver && 
-           <button className="button"  onClick={() => reset()} >Restart Game</button>
-          }
-
+        {gameOver && (
+          <button className="button" onClick={() => reset()}>
+            Restart Game
+          </button>
+        )}
       </div>
 
       {/*       
