@@ -79,7 +79,8 @@ function App() {
       }
     }
   },[userChoice, computerChoice])
-
+  
+  
   return (
     <div className="App">
       <ScoreCard
@@ -88,16 +89,19 @@ function App() {
       ></ScoreCard>
       <div className="choices">
         <div className="choice-user">
-          {/* <img className="user-hand" src={`../images/${userChoice.name}`}>
-            {" "}
+          {/* <img className="user-hand" src={`../images/${userChoice.name}.svg`}>
           </img> */}
-          <h1>{`${userChoice.name}`}</h1>
+          {userChoice && 
+            <h1>{`${userChoice.name}`}</h1>
+          }
         </div>
         <div className="computer-user">
           {/* <img className="computer-hand" src={`../images/${computerChoice.name}`}>
             {" "}
           </img> */}
+          {computerChoice.name && 
           <h1>{`${computerChoice.name}`}</h1>
+          }
         </div>
       </div>
 
