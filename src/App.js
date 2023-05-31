@@ -40,13 +40,13 @@ function App() {
 
 
   const handleClick = (choice) => {
-    setUserChoice(choice);
-    generateComputerChoice();
+    setUserChoice(choice.name);
+    // generateComputerChoice();
   }
 
   const generateComputerChoice = () => {
     const randomIdx = Math.floor(Math.random() * choices.length);
-    setComputerChoice(choices[randomIdx]);
+    setComputerChoice(choices[randomIdx].name);
   }
 
   const reset = () => {
@@ -54,6 +54,24 @@ function App() {
   }
 
   useEffect(() => {
+    setTimeout(() => {
+      generateComputerChoice();
+    },2000)
+  }, [computerChoice])
+
+  const pSelection = choices.find((choice) => userChoice === choice.name);
+
+  const gameResult = () => {
+    console.log('pselection', pSelection)
+
+    
+
+  }
+
+
+
+  useEffect(() => {
+    console.log(computerChoice, userChoice)
     const comboMoves= userChoice + computerChoice;
     if (userPoints <= 4 && computerPoints <=4) {
       if (comboMoves === 'rockscissors' || comboMoves === "paperrock" || comboMoves == "scissorspaper"){
@@ -91,16 +109,18 @@ function App() {
         <div className="choice-user">
           {/* <img className="user-hand" src={`../images/${userChoice.name}.svg`}>
           </img> */}
-          {userChoice && 
-            <h1>{`${userChoice.name}`}</h1>
+          {userChoice.name ? 
+            <h1>{`${userChoice.name}`}</h1> :
+            null
           }
         </div>
         <div className="computer-user">
           {/* <img className="computer-hand" src={`../images/${computerChoice.name}`}>
             {" "}
           </img> */}
-          {computerChoice.name && 
-          <h1>{`${computerChoice.name}`}</h1>
+          {computerChoice.name ? 
+          <h1>{`${computerChoice.name}`}</h1> :
+          null
           }
         </div>
       </div>
