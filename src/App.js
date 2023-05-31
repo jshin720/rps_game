@@ -38,67 +38,88 @@ function App() {
     },
   ];
 
-
   const handleClick = (choice) => {
     setUserChoice(choice.name);
     // generateComputerChoice();
-  }
+  };
 
   const generateComputerChoice = () => {
     const randomIdx = Math.floor(Math.random() * choices.length);
     setComputerChoice(choices[randomIdx].name);
-  }
+  };
 
   const reset = () => {
-    window.location.reload() /// refreshes the page when set to true
-  }
+    window.location.reload(); /// refreshes the page when set to true
+  };
 
   useEffect(() => {
     setTimeout(() => {
       generateComputerChoice();
-    },2000)
-  }, [computerChoice])
+    }, 2000);
+  }, [computerChoice]);
 
   const pSelection = choices.find((choice) => userChoice === choice.name);
 
   const gameResult = () => {
-    console.log('pselection', pSelection)
-
-    
-
-  }
-
-
-
-  useEffect(() => {
-    console.log(computerChoice, userChoice)
-    const comboMoves= userChoice + computerChoice;
-    if (userPoints <= 4 && computerPoints <=4) {
-      if (comboMoves === 'rockscissors' || comboMoves === "paperrock" || comboMoves == "scissorspaper"){
-      const updateUserPoints= userPoints + 1;
-      setUserPoints(updateUserPoints)
-      setTurnResults("You Win!")
-        if (updateUserPoints === 5) {
-          setGameOver(true)
-          setResult('You Win!')
-        }
+    if (pSelection.beats === computerChoice) {
+      setUserPoints(updateUserPoints);
+      setTurnResults("You Win!");
+      if (updateUserPoints === 5) {
+        setGameOver(true);
+        setResult("You Win!");
       }
-      if (comboMoves === 'paperscissors' || comboMoves === "scissorsrock" || comboMoves == "rockpaper") {
-        const updateComputerPoints = computerPoints + 1
-        setComputerPoints(updateComputerPoints)
-        setTurnResults("Computer got the points")
-        if (updateComputerPoints === 5) {
-          setGameOver(true)
-          setResult('Computer Wins!')
-        }
-      }
-      if (comboMoves === 'rockrock' || comboMoves === "scissorsscissors" || comboMoves == "paperpaper") {
-        setTurnResults("It's a tie!")
+    } else if (playerChoice === computerChoice.name) {
+      setTurnResults("It's a tie!");
+    } else if (computerChoice.beats === playerChoice) {
+      setComputerPoints(updateComputerPoints);
+      setTurnResults("Computer got the points");
+      if (updateComputerPoints === 5) {
+        setGameOver(true);
+        setResult("Computer Wins!");
       }
     }
-  },[userChoice, computerChoice])
-  
-  
+  };
+
+  useEffect(() => {
+    console.log(computerChoice, userChoice);
+    const comboMoves = userChoice + computerChoice;
+    if (userPoints <= 4 && computerPoints <= 4) {
+      if (
+        comboMoves === "rockscissors" ||
+        comboMoves === "paperrock" ||
+        comboMoves == "scissorspaper"
+      ) {
+        const updateUserPoints = userPoints + 1;
+        setUserPoints(updateUserPoints);
+        setTurnResults("You Win!");
+        if (updateUserPoints === 5) {
+          setGameOver(true);
+          setResult("You Win!");
+        }
+      }
+      if (
+        comboMoves === "paperscissors" ||
+        comboMoves === "scissorsrock" ||
+        comboMoves == "rockpaper"
+      ) {
+        const updateComputerPoints = computerPoints + 1;
+        setComputerPoints(updateComputerPoints);
+        setTurnResults("Computer got the points");
+        if (updateComputerPoints === 5) {
+          setGameOver(true);
+          setResult("Computer Wins!");
+        }
+      }
+      if (
+        comboMoves === "rockrock" ||
+        comboMoves === "scissorsscissors" ||
+        comboMoves == "paperpaper"
+      ) {
+        setTurnResults("It's a tie!");
+      }
+    }
+  }, [userChoice, computerChoice]);
+
   return (
     <div className="App">
       <ScoreCard
@@ -109,19 +130,13 @@ function App() {
         <div className="choice-user">
           {/* <img className="user-hand" src={`../images/${userChoice.name}.svg`}>
           </img> */}
-          {userChoice.name ? 
-            <h1>{`${userChoice.name}`}</h1> :
-            null
-          }
+          {userChoice.name ? <h1>{`${userChoice.name}`}</h1> : null}
         </div>
         <div className="computer-user">
           {/* <img className="computer-hand" src={`../images/${computerChoice.name}`}>
             {" "}
           </img> */}
-          {computerChoice.name ? 
-          <h1>{`${computerChoice.name}`}</h1> :
-          null
-          }
+          {computerChoice.name ? <h1>{`${computerChoice.name}`}</h1> : null}
         </div>
       </div>
 
