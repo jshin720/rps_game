@@ -53,14 +53,17 @@ function App() {
   };
 
   useEffect(() => {
+    console.log('1st useeffect', userChoice)
     setTimeout(() => {
       generateComputerChoice();
     }, 2000);
-  }, [computerChoice]);
+  }, [userChoice]);
 
-  const pSelection = choices.find((choice) => userChoice === choice.name);
-
-  const gameResult = () => {
+  
+  const gameResult = (userChoice, computerChoice) => {
+    console.log(userChoice, computerChoice)
+    const pSelection = choices.find((choice) => userChoice === choice.name);
+    const updateUserPoints = userPoints + 1;
     if (pSelection.beats === computerChoice) {
       setUserPoints(updateUserPoints);
       setTurnResults("You Win!");
@@ -68,56 +71,57 @@ function App() {
         setGameOver(true);
         setResult("You Win!");
       }
-    } else if (playerChoice === computerChoice.name) {
+    } else if (userChoice === computerChoice.name) {
       setTurnResults("It's a tie!");
-    } else if (computerChoice.beats === playerChoice) {
-      setComputerPoints(updateComputerPoints);
-      setTurnResults("Computer got the points");
-      if (updateComputerPoints === 5) {
-        setGameOver(true);
-        setResult("Computer Wins!");
-      }
+    } else if (computerChoice.beats === userChoice) {
+      // setComputerPoints(updateComputerPoints);
+      // if (updateComputerPoints === 5) {
+        //   setGameOver(true);
+        // }
+        setTurnResults("You Lose");
+      setResult("Computer Wins!");
     }
   };
 
   useEffect(() => {
-    console.log(computerChoice, userChoice);
-    const comboMoves = userChoice + computerChoice;
-    if (userPoints <= 4 && computerPoints <= 4) {
-      if (
-        comboMoves === "rockscissors" ||
-        comboMoves === "paperrock" ||
-        comboMoves == "scissorspaper"
-      ) {
-        const updateUserPoints = userPoints + 1;
-        setUserPoints(updateUserPoints);
-        setTurnResults("You Win!");
-        if (updateUserPoints === 5) {
-          setGameOver(true);
-          setResult("You Win!");
-        }
-      }
-      if (
-        comboMoves === "paperscissors" ||
-        comboMoves === "scissorsrock" ||
-        comboMoves == "rockpaper"
-      ) {
-        const updateComputerPoints = computerPoints + 1;
-        setComputerPoints(updateComputerPoints);
-        setTurnResults("Computer got the points");
-        if (updateComputerPoints === 5) {
-          setGameOver(true);
-          setResult("Computer Wins!");
-        }
-      }
-      if (
-        comboMoves === "rockrock" ||
-        comboMoves === "scissorsscissors" ||
-        comboMoves == "paperpaper"
-      ) {
-        setTurnResults("It's a tie!");
-      }
-    }
+    console.log('2nd useeffect', computerChoice);
+    // gameResult()
+    // const comboMoves = userChoice + computerChoice;
+    // if (userPoints <= 4 && computerPoints <= 4) {
+    //   if (
+    //     comboMoves === "rockscissors" ||
+    //     comboMoves === "paperrock" ||
+    //     comboMoves == "scissorspaper"
+    //   ) {
+    //     
+    //     setUserPoints(updateUserPoints);
+    //     setTurnResults("You Win!");
+    //     if (updateUserPoints === 5) {
+    //       setGameOver(true);
+    //       setResult("You Win!");
+    //     }
+    //   }
+    //   if (
+    //     comboMoves === "paperscissors" ||
+    //     comboMoves === "scissorsrock" ||
+    //     comboMoves == "rockpaper"
+    //   ) {
+    //     const updateComputerPoints = computerPoints + 1;
+    //     setComputerPoints(updateComputerPoints);
+    //     setTurnResults("Computer got the points");
+    //     if (updateComputerPoints === 5) {
+    //       setGameOver(true);
+    //       setResult("Computer Wins!");
+    //     }
+    //   }
+    //   if (
+    //     comboMoves === "rockrock" ||
+    //     comboMoves === "scissorsscissors" ||
+    //     comboMoves == "paperpaper"
+    //   ) {
+    //     setTurnResults("It's a tie!");
+    //   }
+    // }
   }, [userChoice, computerChoice]);
 
   return (
