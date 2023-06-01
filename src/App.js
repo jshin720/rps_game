@@ -52,7 +52,7 @@ function App() {
   };
 
   const reset = () => {
-    window.location.reload(); /// refreshes the page when set to true
+    window.location.reload(); /// reloads the page when set to true
   };
 
   useEffect(() => {
@@ -71,6 +71,7 @@ function App() {
     const pSelection = choices.find((choice) => userChoice === choice.name);
     const cSelection = choices.find((choice) => computerChoice === choice.name);
     const updateUserPoints = userPoints + 1;
+
     console.log('selection', pSelection, cSelection)
     if (pSelection.beats === computerChoice) {
       setUserPoints(updateUserPoints);
@@ -79,59 +80,21 @@ function App() {
         setGameOver(true);
         setResult("You Win!");
       }
-    } else if (userChoice === computerChoice) {
-      setTurnResults("It's a tie!");
     } else if (cSelection.beats === userChoice) {
       // setComputerPoints(updateComputerPoints);
       // if (updateComputerPoints === 5) {
         //   setGameOver(true);
         // }
         setTurnResults("You Lose");
-      setResult("Computer Wins!");
+        // setResult("Computer Wins!");
+      } else {
+        setTurnResults("It's a tie!");
     }
   };
 
   useEffect(() => {
     console.log('2nd useeffect', computerChoice);
-
     if (userChoice && computerChoice) gameResult(userChoice, computerChoice);
-    // const comboMoves = userChoice + computerChoice;
-    // if (userPoints <= 4 && computerPoints <= 4) {
-    //   if (
-    //     comboMoves === "rockscissors" ||
-    //     comboMoves === "paperrock" ||
-    //     comboMoves == "scissorspaper"
-    //   ) {
-    //     
-    //     setUserPoints(updateUserPoints);
-    //     setTurnResults("You Win!");
-    //     if (updateUserPoints === 5) {
-    //       setGameOver(true);
-    //       setResult("You Win!");
-    //     }
-    //   }
-    //   if (
-    //     comboMoves === "paperscissors" ||
-    //     comboMoves === "scissorsrock" ||
-    //     comboMoves == "rockpaper"
-    //   ) {
-    //     const updateComputerPoints = computerPoints + 1;
-    //     setComputerPoints(updateComputerPoints);
-    //     setTurnResults("Computer got the points");
-    //     if (updateComputerPoints === 5) {
-    //       setGameOver(true);
-    //       setResult("Computer Wins!");
-    //     }
-    //   }
-    //   if (
-    //     comboMoves === "rockrock" ||
-    //     comboMoves === "scissorsscissors" ||
-    //     comboMoves == "paperpaper"
-    //   ) {
-    //     setTurnResults("It's a tie!");
-    //   }
-    // }
-    
   }, [userChoice, computerChoice]);
 
   return (
