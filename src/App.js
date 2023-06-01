@@ -67,9 +67,11 @@ function App() {
 
   
   const gameResult = (userChoice, computerChoice) => {
-    console.log(userChoice, computerChoice)
+    console.log('gr', userChoice, computerChoice)
     const pSelection = choices.find((choice) => userChoice === choice.name);
+    const cSelection = choices.find((choice) => computerChoice === choice.name);
     const updateUserPoints = userPoints + 1;
+    console.log('selection', pSelection, cSelection)
     if (pSelection.beats === computerChoice) {
       setUserPoints(updateUserPoints);
       setTurnResults("You Win!");
@@ -77,9 +79,9 @@ function App() {
         setGameOver(true);
         setResult("You Win!");
       }
-    } else if (userChoice === computerChoice.name) {
+    } else if (userChoice === computerChoice) {
       setTurnResults("It's a tie!");
-    } else if (computerChoice.beats === userChoice) {
+    } else if (cSelection.beats === userChoice) {
       // setComputerPoints(updateComputerPoints);
       // if (updateComputerPoints === 5) {
         //   setGameOver(true);
@@ -91,7 +93,8 @@ function App() {
 
   useEffect(() => {
     console.log('2nd useeffect', computerChoice);
-    // gameResult()
+
+    if (userChoice && computerChoice) gameResult(userChoice, computerChoice);
     // const comboMoves = userChoice + computerChoice;
     // if (userPoints <= 4 && computerPoints <= 4) {
     //   if (
@@ -128,8 +131,8 @@ function App() {
     //     setTurnResults("It's a tie!");
     //   }
     // }
-    setEndRound(true)
-  }, [endRound]);
+    
+  }, [userChoice, computerChoice]);
 
   return (
     <div className="App">
