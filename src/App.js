@@ -15,10 +15,12 @@ import ResultsCard from "./components/result_card/result_card";
 import HomeCard from "./components/home_card/home_card";
 
 function App() {
-  const [userChoice, setUserChoice] = useState("");
-  const [computerChoice, setComputerChoice] = useState("");
+  const [userChoice, setUserChoice] = useState(null);
+  const [computerChoice, setComputerChoice] = useState(null);
   const [userPoints, setUserPoints] = useState(0);
   const [computerPoints, setComputerPoints] = useState(0);
+  const [endPlayerTurn, setEndPlayerTurn] = useState(false);
+  const [endRound, setEndRound] = useState(false)
   const [turnResults, setTurnResults] = useState("");
   const [result, setResult] = useState("");
   const [gameOver, setGameOver] = useState(false);
@@ -40,6 +42,7 @@ function App() {
 
   const handleClick = (choice) => {
     setUserChoice(choice.name);
+    setEndPlayerTurn(true);
     // generateComputerChoice();
   };
 
@@ -54,10 +57,13 @@ function App() {
 
   useEffect(() => {
     console.log('1st useeffect', userChoice)
-    setTimeout(() => {
-      generateComputerChoice();
-    }, 2000);
-  }, [userChoice]);
+    if (userChoice) {
+      setTimeout(() => {
+        // console.log('timeout')
+        generateComputerChoice();
+      }, 2000);
+    }
+  }, [endPlayerTurn]);
 
   
   const gameResult = (userChoice, computerChoice) => {
@@ -122,7 +128,8 @@ function App() {
     //     setTurnResults("It's a tie!");
     //   }
     // }
-  }, [userChoice, computerChoice]);
+    setEndRound(true)
+  }, [endRound]);
 
   return (
     <div className="App">
@@ -134,13 +141,13 @@ function App() {
         <div className="choice-user">
           {/* <img className="user-hand" src={`../images/${userChoice.name}.svg`}>
           </img> */}
-          {userChoice.name ? <h1>{`${userChoice.name}`}</h1> : null}
+          {userChoice ? <h1>{`${userChoice}`}</h1> : null}
         </div>
         <div className="computer-user">
           {/* <img className="computer-hand" src={`../images/${computerChoice.name}`}>
             {" "}
           </img> */}
-          {computerChoice.name ? <h1>{`${computerChoice.name}`}</h1> : null}
+          {computerChoice ? <h1>{`${computerChoice}`}</h1> : null}
         </div>
       </div>
 
