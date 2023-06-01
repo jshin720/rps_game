@@ -20,7 +20,6 @@ function App() {
   const [userPoints, setUserPoints] = useState(0);
   const [computerPoints, setComputerPoints] = useState(0);
   const [endPlayerTurn, setEndPlayerTurn] = useState(false);
-  const [endRound, setEndRound] = useState(false)
   const [turnResults, setTurnResults] = useState("");
   const [result, setResult] = useState("");
   const [gameOver, setGameOver] = useState(false);
