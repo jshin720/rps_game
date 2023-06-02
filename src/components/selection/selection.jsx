@@ -3,15 +3,16 @@ import ResultCard from "../result_card/result_card";
 
 function Selection(props) {
   const {
-    setComputerChoice,
-    choices,
-    playerChoice,
+    userChoice,
     computerChoice,
-    setSwitchCard,
+    endPlayerTurn,
+    endComputerTurn
   } = props;
+  console.log('selection', props)
 
   const choiceSwitch = () => {
-    if (endPlayerChoice && !endComputerChoice) {
+    console.log('choiceSwitch')
+    if (endPlayerTurn && !endComputerTurn) {
       return (
         <div>
           <div>
@@ -24,12 +25,12 @@ function Selection(props) {
           </div>
         </div>
       );
-    } else if (endPlayerChoice && endComputerChoice) {
+    } else if (endPlayerTurn && endComputerTurn) {
       return (
         <div>
           <div>
             <h4>You Picked</h4>
-            <span>{`${playerChoice}`}</span>
+            <span>{`${userChoice}`}</span>
           </div>
           <div>
             <h4>The House Picked</h4>
@@ -41,7 +42,7 @@ function Selection(props) {
   };
 
   return <>
-    {choiceSwitch}
+    {choiceSwitch()}
   </>;
 }
 

@@ -104,26 +104,34 @@ function App() {
         computerPoints={computerPoints}
       ></ScoreCard>
       <div className="choices">
-        <div className="choice-user">
-          {/* <img className="user-hand" src={`../images/${userChoice.name}.svg`}>
-          </img> */}
+        {/* <div className="choice-user">
+          
           {userChoice ? <h1>{`${userChoice}`}</h1> : null}
         </div>
         <div className="computer-user">
-          {/* <img className="computer-hand" src={`../images/${computerChoice.name}`}>
-            {" "}
-          </img> */}
           {computerChoice ? <h1>{`${computerChoice}`}</h1> : null}
-        </div>
+        </div> */}
+
+        { !userChoice && !computerChoice ? 
+          ( <div children="button-container">
+            {choices.map((choice, idx) => (
+              <button className="" key={idx} onClick={() => handleClick(choice)}>
+                {choice.name}
+              </button>
+           ))}
+             </div>
+          ) : (
+            <Selection
+              userChoice={userChoice}
+              computerChoice={computerChoice}
+              endPlayerTurn={endPlayerTurn}
+              endComputerTurn={endComputerTurn}
+            />
+          )
+
+        }
       </div>
 
-      <div children="button-container">
-        {choices.map((choice, idx) => (
-          <button className="" key={idx} onClick={() => handleClick(choice)}>
-            {choice.name}
-          </button>
-        ))}
-      </div>
 
       <div className="result">
         <h1>Turn Result: {turnResults}</h1>
