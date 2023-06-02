@@ -66,12 +66,12 @@ function App() {
 
   
   const gameResult = (userChoice, computerChoice) => {
-    console.log('gr', userChoice, computerChoice)
+    // console.log('gr', userChoice, computerChoice)
     const pSelection = choices.find((choice) => userChoice === choice.name);
     const cSelection = choices.find((choice) => computerChoice === choice.name);
     const updateUserPoints = userPoints + 1;
 
-    console.log('selection', pSelection, cSelection)
+    // console.log('selection', pSelection, cSelection)
     if (pSelection.beats === computerChoice) {
       setUserPoints(updateUserPoints);
       setTurnResults("You Win!");
@@ -87,8 +87,11 @@ function App() {
   };
 
   useEffect(() => {
-    console.log('2nd useeffect', computerChoice);
-    if (userChoice && computerChoice) gameResult(userChoice, computerChoice);
+    // console.log('2nd useeffect', computerChoice);
+    if (userChoice && computerChoice) 
+      setTimeout(() => {
+        gameResult(userChoice, computerChoice);
+      }, 1500)
   }, [userChoice, computerChoice]);
 
   return (
