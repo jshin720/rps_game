@@ -13,11 +13,6 @@ export default function ResultCard(props) {
     setScore
   } = props;
 
-  console.log("choices", choices);
-  const pSelection = choices.find((choice) => playerChoice === choice.name);
-  console.log("ps", pSelection.beats === computerChoice.name);
-  console.log("result props", props);
-  
   const handleClick = () => {
     setPlayerChoice("");
     setComputerChoice("");

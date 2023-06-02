@@ -20,9 +20,11 @@ function App() {
   const [userPoints, setUserPoints] = useState(0);
   const [computerPoints, setComputerPoints] = useState(0);
   const [endPlayerTurn, setEndPlayerTurn] = useState(false);
+  const [endComputerTurn, setEndComputerTurn] = useState(false);
   const [turnResults, setTurnResults] = useState("");
   const [result, setResult] = useState("");
   const [gameOver, setGameOver] = useState(false);
+  const [roundOver, setRoundOver] = useState(false);
 
   const choices = [
     {
@@ -60,6 +62,7 @@ function App() {
       setTimeout(() => {
         // console.log('timeout')
         generateComputerChoice();
+        setEndComputerTurn(true);
       }, 2000);
     }
   }, [endPlayerTurn]);
@@ -134,14 +137,6 @@ function App() {
           </button>
         )}
       </div>
-
-      {/*       
-      <Routes>
-        <Route path="/" element={<HomeCard/>}/>
-        <Route path="/mainCard" element={<MainCard/>} />
-        <Route path="/selection" element={<Selection/>} />
-        <Route path="/results" element={<ResultsCard/>} />
-      </Routes> */}
     </div>
   );
 }
