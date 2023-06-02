@@ -6,15 +6,18 @@ function Selection(props) {
     userChoice,
     computerChoice,
     endPlayerTurn,
-    endComputerTurn
+    endComputerTurn,
+    roundOver,
+    turnResults
   } = props;
   console.log('selection', props)
 
   const choiceSwitch = () => {
     console.log('choiceSwitch')
+    // take out a layer of divs below later
     if (endPlayerTurn && !endComputerTurn) {
       return (
-        <div>
+        <div> 
           <div>
             <h4>You Picked</h4>
             <span>{`${userChoice}`}</span>
@@ -31,6 +34,15 @@ function Selection(props) {
           <div>
             <h4>You Picked</h4>
             <span>{`${userChoice}`}</span>
+          </div>
+          <div>
+          {roundOver ? (
+            <>
+              <h1>{`${turnResults}`}</h1>
+              <h3>button</h3>
+            </>
+            ) : null
+          }
           </div>
           <div>
             <h4>The House Picked</h4>

@@ -73,7 +73,7 @@ function App() {
     const pSelection = choices.find((choice) => userChoice === choice.name);
     const cSelection = choices.find((choice) => computerChoice === choice.name);
     const updateUserPoints = userPoints + 1;
-
+    setRoundOver(true);
     // console.log('selection', pSelection, cSelection)
     if (pSelection.beats === computerChoice) {
       setUserPoints(updateUserPoints);
@@ -126,6 +126,8 @@ function App() {
               computerChoice={computerChoice}
               endPlayerTurn={endPlayerTurn}
               endComputerTurn={endComputerTurn}
+              roundOver={roundOver}
+              turnResults={turnResults}
             />
           )
 
