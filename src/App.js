@@ -80,12 +80,7 @@ function App() {
         setResult("You Win!");
       }
     } else if (cSelection.beats === userChoice) {
-      // setComputerPoints(updateComputerPoints);
-      // if (updateComputerPoints === 5) {
-        //   setGameOver(true);
-        // }
         setTurnResults("You Lose");
-        // setResult("Computer Wins!");
       } else {
         setTurnResults("It's a tie!");
     }
