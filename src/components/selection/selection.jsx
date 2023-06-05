@@ -19,7 +19,7 @@ function Selection(props) {
 
   const handleClick = () => {
     setUserChoice(null);
-    setComputerChoice(null);
+    setComputerChoice('');
     setTurnResults("");
     setEndPlayerTurn(false);
   }
@@ -36,7 +36,7 @@ function Selection(props) {
           </div>
           <div>
             <h4>The House Picked</h4>
-            <span>Empty</span>
+            <span className="placeHolder"></span>
           </div>
         </div>
       );
