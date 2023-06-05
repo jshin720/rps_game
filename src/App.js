@@ -78,10 +78,6 @@ function App() {
     if (pSelection.beats === computerChoice) {
       setUserPoints(updateUserPoints);
       setTurnResults("You Win!");
-      if (updateUserPoints === 5) {
-        setGameOver(true);
-        setResult("You Win!");
-      }
     } else if (cSelection.beats === userChoice) {
         setTurnResults("You Lose");
       } else {
@@ -104,14 +100,6 @@ function App() {
         computerPoints={computerPoints}
       ></ScoreCard>
       <div className="choices">
-        {/* <div className="choice-user">
-          
-          {userChoice ? <h1>{`${userChoice}`}</h1> : null}
-        </div>
-        <div className="computer-user">
-          {computerChoice ? <h1>{`${computerChoice}`}</h1> : null}
-        </div> */}
-
         { !userChoice && !computerChoice ? 
           ( <div children="button-container">
             {choices.map((choice, idx) => (
@@ -128,6 +116,8 @@ function App() {
               endComputerTurn={endComputerTurn}
               roundOver={roundOver}
               turnResults={turnResults}
+              setUserChoice={setUserChoice}
+              setComputerChoice={setComputerChoice}
             />
           )
 

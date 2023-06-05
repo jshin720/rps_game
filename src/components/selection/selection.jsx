@@ -8,9 +8,17 @@ function Selection(props) {
     endPlayerTurn,
     endComputerTurn,
     roundOver,
-    turnResults
+    turnResults,
+    setComputerChoice,
+    setUserChoice
   } = props;
   console.log('selection', props)
+
+
+  const handleClick = () => {
+    setUserChoice(null);
+    setComputerChoice(null);
+  }
 
   const choiceSwitch = () => {
     console.log('choiceSwitch')
@@ -39,7 +47,7 @@ function Selection(props) {
           {roundOver ? (
             <>
               <h1>{`${turnResults}`}</h1>
-              <h3>button</h3>
+              <button className="pa-button" onClick={()=> handleClick()}>Play Again</button>
             </>
             ) : null
           }
