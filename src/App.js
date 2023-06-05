@@ -1,28 +1,20 @@
 import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter,
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  generatePath,
-} from "react-router-dom";
+
 
 import "./App.css";
 import ScoreCard from "./components/score_card/score_card";
-import MainCard from "./components/main_card/main_card";
 import Selection from "./components/selection/selection";
-import ResultsCard from "./components/result_card/result_card";
-import HomeCard from "./components/home_card/home_card";
+import Modal from "./components/modal/modal";
 
 function App() {
-  const [userChoice, setUserChoice] = useState(null);
-  const [computerChoice, setComputerChoice] = useState(null);
+  const [userChoice, setUserChoice] = useState('');
+  const [computerChoice, setComputerChoice] = useState('');
   const [userPoints, setUserPoints] = useState(0);
-  const [computerPoints, setComputerPoints] = useState(0);
+  // const [computerPoints, setComputerPoints] = useState(0);
   const [endPlayerTurn, setEndPlayerTurn] = useState(false);
   const [endComputerTurn, setEndComputerTurn] = useState(false);
   const [turnResults, setTurnResults] = useState("");
-  const [result, setResult] = useState("");
+  const [openModal, setOpenModal] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [roundOver, setRoundOver] = useState(false);
 
@@ -97,7 +89,7 @@ function App() {
     <div className="App">
       <ScoreCard
         userPoints={userPoints}
-        computerPoints={computerPoints}
+        // computerPoints={computerPoints}
       ></ScoreCard>
       <div className="choices">
         { !userChoice && !computerChoice ? 
@@ -129,7 +121,7 @@ function App() {
 
       <div className="result">
         <h1>Turn Result: {turnResults}</h1>
-        <h1>Final Result: {result}</h1>
+        {/* <h1>Final Result: {result}</h1> */}
       </div>
 
       <div className="button-div">
@@ -139,6 +131,11 @@ function App() {
           </button>
         )}
       </div>
+
+      <Modal
+        setOpenModal={setOpenModal}
+        openModal={openModal}
+      />
     </div>
   );
 }

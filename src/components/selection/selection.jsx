@@ -18,7 +18,7 @@ function Selection(props) {
 
 
   const handleClick = () => {
-    setUserChoice(null);
+    setUserChoice('');
     setComputerChoice('');
     setTurnResults("");
     setEndPlayerTurn(false);
