@@ -1,23 +1,34 @@
-import React from 'react'
+import React from "react";
 
-export default function modal(props) {
-  const {setOpenModal, openModal} = props;
-
+export default function modal({ openModal, onClose }) {
   if (!openModal) return null;
-  
+
   return (
     <div className="overlay">
       <div className="rules-modal">
-        <h1>Rules</h1>
-        <p className="close-button" o>X</p>
+        <span className="modal-header">
+          <h1>Rules</h1>
+          <p className="close-btn" onClick={onClose}>
+            X
+          </p>
+        </span>
         <div className="beats-container">
           <ul>
             <li>paper</li>
-            <li>beats</li>
+            <span>
+              <h5>beats</h5>
+              <h7>arrow</h7>
+            </span>
             <li>scissors</li>
-            <li>beats</li>
+            <span>
+              <h5>beats</h5>
+              <h7>arrow</h7>
+            </span>
             <li>rock</li>
-            <li>beats</li>
+            <span>
+              <h5>beats</h5>
+              <h7>arrow</h7>
+            </span>
           </ul>
         </div>
       </div>

@@ -12,24 +12,23 @@ function Selection(props) {
     setComputerChoice,
     setUserChoice,
     setTurnResults,
-    setEndPlayerTurn
+    setEndPlayerTurn,
   } = props;
-  console.log('selection', props)
-
+  console.log("selection", props);
 
   const handleClick = () => {
-    setUserChoice('');
-    setComputerChoice('');
+    setUserChoice("");
+    setComputerChoice("");
     setTurnResults("");
     setEndPlayerTurn(false);
-  }
+  };
 
   const choiceSwitch = () => {
-    console.log('choiceSwitch')
+    console.log("choiceSwitch");
     // take out a layer of divs below later
     if (endPlayerTurn && !endComputerTurn) {
       return (
-        <div> 
+        <div>
           <div>
             <h4>You Picked</h4>
             <span>{`${userChoice}`}</span>
@@ -48,13 +47,14 @@ function Selection(props) {
             <span>{`${userChoice}`}</span>
           </div>
           <div>
-          {roundOver ? (
-            <>
-              <h1>{`${turnResults}`}</h1>
-              <button className="pa-button" onClick={()=> handleClick()}>Play Again</button>
-            </>
-            ) : null
-          }
+            {roundOver ? (
+              <>
+                <h1>{`${turnResults}`}</h1>
+                <button className="pa-button" onClick={() => handleClick()}>
+                  Play Again
+                </button>
+              </>
+            ) : null}
           </div>
           <div>
             <h4>The House Picked</h4>
@@ -65,9 +65,7 @@ function Selection(props) {
     }
   };
 
-  return <>
-    {choiceSwitch()}
-  </>;
+  return <>{choiceSwitch()}</>;
 }
 
 export default Selection;

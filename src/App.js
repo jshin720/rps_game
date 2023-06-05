@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-
 import "./App.css";
 import ScoreCard from "./components/score_card/score_card";
 import Selection from "./components/selection/selection";
 import Modal from "./components/modal/modal";
 
 function App() {
-  const [userChoice, setUserChoice] = useState('');
-  const [computerChoice, setComputerChoice] = useState('');
+  const [userChoice, setUserChoice] = useState("");
+  const [computerChoice, setComputerChoice] = useState("");
   const [userPoints, setUserPoints] = useState(0);
   // const [computerPoints, setComputerPoints] = useState(0);
   const [endPlayerTurn, setEndPlayerTurn] = useState(false);
@@ -39,7 +38,6 @@ function App() {
     // generateComputerChoice();
   };
 
-  
   const generateComputerChoice = () => {
     const randomIdx = Math.floor(Math.random() * choices.length);
     setComputerChoice(choices[randomIdx].name);
@@ -50,7 +48,7 @@ function App() {
   };
 
   useEffect(() => {
-    console.log('1st useeffect', userChoice)
+    console.log("1st useeffect", userChoice);
     if (userChoice) {
       setTimeout(() => {
         // console.log('timeout')
@@ -60,7 +58,6 @@ function App() {
     }
   }, [endPlayerTurn]);
 
-  
   const gameResult = (userChoice, computerChoice) => {
     // console.log('gr', userChoice, computerChoice)
     const pSelection = choices.find((choice) => userChoice === choice.name);
@@ -72,18 +69,18 @@ function App() {
       setUserPoints(updateUserPoints);
       setTurnResults("You Win!");
     } else if (cSelection.beats === userChoice) {
-        setTurnResults("You Lose");
-      } else {
-        setTurnResults("It's a tie!");
+      setTurnResults("You Lose");
+    } else {
+      setTurnResults("It's a tie!");
     }
   };
 
   useEffect(() => {
     // console.log('2nd useeffect', computerChoice);
-    if (userChoice && computerChoice) 
+    if (userChoice && computerChoice)
       setTimeout(() => {
         gameResult(userChoice, computerChoice);
-      }, 1500)
+      }, 1500);
   }, [userChoice, computerChoice]);
 
   return (
@@ -93,32 +90,33 @@ function App() {
         // computerPoints={computerPoints}
       ></ScoreCard>
       <div className="choices">
-        { !userChoice && !computerChoice ? 
-          ( <div children="button-container">
+        {!userChoice && !computerChoice ? (
+          <div children="button-container">
             {choices.map((choice, idx) => (
-              <button className="" key={idx} onClick={() => handleClick(choice)}>
+              <button
+                className=""
+                key={idx}
+                onClick={() => handleClick(choice)}
+              >
                 {choice.name}
               </button>
-           ))}
-             </div>
-          ) : (
-            <Selection
-              userChoice={userChoice}
-              computerChoice={computerChoice}
-              endPlayerTurn={endPlayerTurn}
-              endComputerTurn={endComputerTurn}
-              roundOver={roundOver}
-              turnResults={turnResults}
-              setUserChoice={setUserChoice}
-              setComputerChoice={setComputerChoice}
-              setTurnResults={setTurnResults}
-              setEndPlayerTurn={setEndPlayerTurn}
-            />
-          )
-
-        }
+            ))}
+          </div>
+        ) : (
+          <Selection
+            userChoice={userChoice}
+            computerChoice={computerChoice}
+            endPlayerTurn={endPlayerTurn}
+            endComputerTurn={endComputerTurn}
+            roundOver={roundOver}
+            turnResults={turnResults}
+            setUserChoice={setUserChoice}
+            setComputerChoice={setComputerChoice}
+            setTurnResults={setTurnResults}
+            setEndPlayerTurn={setEndPlayerTurn}
+          />
+        )}
       </div>
-
 
       <div className="result">
         <h1>Turn Result: {turnResults}</h1>
@@ -133,10 +131,13 @@ function App() {
         )}
       </div>
 
-      <button className="modal-button" onClick={() => setOpenModal(true)}>Rules</button>
+      <button className="modal-button" onClick={() => setOpenModal(true)}>
+        Rules
+      </button>
       <Modal
         setOpenModal={setOpenModal}
         openModal={openModal}
+        onClose={() => setOpenModal(false)}
       />
     </div>
   );
