@@ -39,6 +39,7 @@ function App() {
     // generateComputerChoice();
   };
 
+  
   const generateComputerChoice = () => {
     const randomIdx = Math.floor(Math.random() * choices.length);
     setComputerChoice(choices[randomIdx].name);
@@ -132,6 +133,7 @@ function App() {
         )}
       </div>
 
+      <button className="modal-button" onClick={() => setOpenModal(true)}>Rules</button>
       <Modal
         setOpenModal={setOpenModal}
         openModal={openModal}
