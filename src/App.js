@@ -118,6 +118,8 @@ function App() {
               turnResults={turnResults}
               setUserChoice={setUserChoice}
               setComputerChoice={setComputerChoice}
+              setTurnResults={setTurnResults}
+              setEndPlayerTurn={setEndPlayerTurn}
             />
           )
 

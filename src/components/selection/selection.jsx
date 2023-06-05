@@ -10,7 +10,9 @@ function Selection(props) {
     roundOver,
     turnResults,
     setComputerChoice,
-    setUserChoice
+    setUserChoice,
+    setTurnResults,
+    setEndPlayerTurn
   } = props;
   console.log('selection', props)
 
@@ -18,6 +20,8 @@ function Selection(props) {
   const handleClick = () => {
     setUserChoice(null);
     setComputerChoice(null);
+    setTurnResults("");
+    setEndPlayerTurn(false);
   }
 
   const choiceSwitch = () => {
