@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
-import ResultCard from "../result_card/result_card";
+import React from "react";
+import Rock from "../../images/rock.svg";
+import Paper from "../../images/paper.svg";
+import Scissors from "../../images/scissors.svg";
 
 function Selection(props) {
   const {
@@ -31,7 +33,9 @@ function Selection(props) {
         <div>
           <div>
             <h4>You Picked</h4>
-            <span>{`${userChoice}`}</span>
+            <span>
+              {`${userChoice}`}
+              </span>
           </div>
           <div>
             <h4>The House Picked</h4>

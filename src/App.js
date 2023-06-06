@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
-
+import { ReactSVG } from "react-svg";
 import "./App.css";
 import ScoreCard from "./components/score_card/score_card";
 import Selection from "./components/selection/selection";
 import Modal from "./components/modal/modal";
+import Rock from "./images/rock.svg";
+import Paper from "./images/paper.svg";
+import Scissors from "./images/scissors.svg";
+import Triangle from "./images/bg-triangle.svg"
+import logo from "./images/logo.svg"
 
 function App() {
   const [userChoice, setUserChoice] = useState("");
@@ -33,7 +38,7 @@ function App() {
   ];
 
   const handleClick = (choice) => {
-    setUserChoice(choice.name);
+    setUserChoice(choice);
     setEndPlayerTurn(true);
     // generateComputerChoice();
   };
@@ -91,16 +96,23 @@ function App() {
       ></ScoreCard>
       <div className="choices">
         {!userChoice && !computerChoice ? (
-          <div children="button-container">
-            {choices.map((choice, idx) => (
-              <button
-                className=""
-                key={idx}
-                onClick={() => handleClick(choice)}
-              >
-                {choice.name}
+          <div className="btn-container">
+            <ReactSVG src={Triangle} />
+            <div className="rocks-container">
+              <button className="rock-btn" onClick={() => handleClick("rock")}>
+                <ReactSVG src={Rock} />
               </button>
-            ))}
+            </div>
+            <div className="paper-container">
+              <button className="paper-btn" onClick={() => handleClick("paper")}>
+                <ReactSVG src={Paper} />
+              </button>
+            </div>
+            <div className="Scissors-container">
+              <button className="scissors-btn" onClick={() => handleClick("scissors")}>
+                <ReactSVG src={Scissors} />
+              </button>
+            </div>
           </div>
         ) : (
           <Selection
