@@ -9,11 +9,9 @@ function ScoreCard(props) {
   return (
     <div className="scorecard-container">
       <span className="choices-list">
-        <ul>
-          <li>Rock</li>
-          <li>Paper</li>
-          <li>Scissor</li>
-        </ul>
+          <p>Rock</p>
+          <p>Paper</p>
+          <p>Scissor</p>
       </span>
       <span className="score-holder">
         <h4 className="score-header">score {`${userPoints}`}</h4>
