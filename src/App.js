@@ -8,7 +8,7 @@ import Rock from "./images/rock.svg";
 import Paper from "./images/paper.svg";
 import Scissors from "./images/scissors.svg";
 import Triangle from "./images/bg-triangle.svg"
-import logo from "./images/logo.svg"
+
 
 function App() {
   const [userChoice, setUserChoice] = useState("");

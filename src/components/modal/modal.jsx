@@ -1,4 +1,7 @@
 import React from "react";
+import CloseIcon from "../../images/icon-close.svg";
+import Rules from "../../images/image-rules.svg";
+import { ReactSVG } from "react-svg";
 
 export default function modal({ openModal, onClose }) {
   if (!openModal) return null;
@@ -8,28 +11,10 @@ export default function modal({ openModal, onClose }) {
       <div className="rules-modal">
         <span className="modal-header">
           <h1>Rules</h1>
-          <p className="close-btn" onClick={onClose}>
-            X
-          </p>
+            <ReactSVG src={CloseIcon} onClick={onClose} />
         </span>
         <div className="beats-container">
-          <ul>
-            <li>paper</li>
-            <span>
-              <h5>beats</h5>
-              <h7>arrow</h7>
-            </span>
-            <li>scissors</li>
-            <span>
-              <h5>beats</h5>
-              <h7>arrow</h7>
-            </span>
-            <li>rock</li>
-            <span>
-              <h5>beats</h5>
-              <h7>arrow</h7>
-            </span>
-          </ul>
+          <ReactSVG src={Rules} />
         </div>
       </div>
     </div>
