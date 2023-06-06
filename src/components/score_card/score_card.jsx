@@ -1,4 +1,5 @@
 import React from "react";
+import "./score_card.css"
 
 
 function ScoreCard(props) {
@@ -6,8 +7,8 @@ function ScoreCard(props) {
   let { userPoints, computerPoints } = props;
   
   return (
-    <div>
-      <span>
+    <div className="scorecard-container">
+      <span className="choices-list">
         <ul>
           <li>Rock</li>
           <li>Paper</li>
@@ -15,7 +16,7 @@ function ScoreCard(props) {
         </ul>
       </span>
       <span className="score-holder">
-        <h4>score {`${userPoints}`}</h4>
+        <h4 className="score-header">score {`${userPoints}`}</h4>
       </span>
     </div>
   );

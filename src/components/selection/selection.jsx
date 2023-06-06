@@ -27,10 +27,9 @@ function Selection(props) {
   };
 
   const svgSwitcher = (choice) => {
-    console.log("svgSwitch", computerChoice);
-    if (choice === "rock") return <ReactSVG src={Rock}/>;
-    if (choice === "paper") return <ReactSVG  src={Paper}/>;
-    if (choice === "scissors") return <ReactSVG src={Scissors}/>;
+    if (choice === "rock") return <ReactSVG src={Rock} alt={choice}/>;
+    if (choice === "paper") return <ReactSVG src={Paper} alt={choice} />;
+    if (choice === "scissors") return <ReactSVG src={Scissors} alt={choice} />;
   } 
 
   const choiceSwitch = () => {

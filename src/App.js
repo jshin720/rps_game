@@ -97,20 +97,20 @@ function App() {
       <div className="choices">
         {!userChoice && !computerChoice ? (
           <div className="btn-container">
-            <ReactSVG src={Triangle} />
+            <ReactSVG src={Triangle} alt="triangle"/>
             <div className="rocks-container">
               <button className="rock-btn" onClick={() => handleClick("rock")}>
-                <ReactSVG src={Rock} />
+                <ReactSVG src={Rock} alt="rock"/>
               </button>
             </div>
             <div className="paper-container">
               <button className="paper-btn" onClick={() => handleClick("paper")}>
-                <ReactSVG src={Paper} />
+                <ReactSVG src={Paper} alt="paper"/>
               </button>
             </div>
             <div className="Scissors-container">
               <button className="scissors-btn" onClick={() => handleClick("scissors")}>
-                <ReactSVG src={Scissors} />
+                <ReactSVG src={Scissors} alt="scissors"/>
               </button>
             </div>
           </div>
