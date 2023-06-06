@@ -2,6 +2,7 @@ import React from "react";
 import Rock from "../../images/rock.svg";
 import Paper from "../../images/paper.svg";
 import Scissors from "../../images/scissors.svg";
+import { ReactSVG } from "react-svg";
 
 function Selection(props) {
   const {
@@ -25,8 +26,15 @@ function Selection(props) {
     setEndPlayerTurn(false);
   };
 
+  const svgSwitcher = (choice) => {
+    console.log("svgSwitch", computerChoice);
+    if (choice === "rock") return <ReactSVG src={Rock}/>;
+    if (choice === "paper") return <ReactSVG  src={Paper}/>;
+    if (choice === "scissors") return <ReactSVG src={Scissors}/>;
+  } 
+
   const choiceSwitch = () => {
-    console.log("choiceSwitch");
+    
     // take out a layer of divs below later
     if (endPlayerTurn && !endComputerTurn) {
       return (
@@ -34,7 +42,8 @@ function Selection(props) {
           <div>
             <h4>You Picked</h4>
             <span>
-              {`${userChoice}`}
+              {/* {`${userChoice}`} */}
+              {svgSwitcher(userChoice)}
               </span>
           </div>
           <div>
@@ -48,7 +57,7 @@ function Selection(props) {
         <div>
           <div>
             <h4>You Picked</h4>
-            <span>{`${userChoice}`}</span>
+            <span>{svgSwitcher(userChoice)}</span>
           </div>
           <div>
             {roundOver ? (
@@ -62,7 +71,7 @@ function Selection(props) {
           </div>
           <div>
             <h4>The House Picked</h4>
-            <span>{`${computerChoice}`}</span>
+            <span>{svgSwitcher(computerChoice)}</span>
           </div>
         </div>
       );

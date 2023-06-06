@@ -28,12 +28,12 @@ function App() {
       beats: "rock",
     },
     {
-      name: "scissor",
+      name: "scissors",
       beats: "paper",
     },
     {
       name: "rock",
-      beats: "scissor",
+      beats: "scissors",
     },
   ];
 
