@@ -8,6 +8,15 @@
   text-align: center;
 }
 
+.modal-button {
+  position: fixed;
+  bottom: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  padding: 12px 24px;
+}
+
 
 
 /* .App-header {

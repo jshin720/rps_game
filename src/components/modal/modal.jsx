@@ -2,7 +2,7 @@ import React from "react";
 import CloseIcon from "../../images/icon-close.svg";
 import Rules from "../../images/image-rules.svg";
 import { ReactSVG } from "react-svg";
-
+import "./modal.css"
 export default function modal({ openModal, onClose }) {
   if (!openModal) return null;
 
