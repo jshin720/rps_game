@@ -1,3 +1,16 @@
+@font-face {
+  font-family: Bsc600;
+  src: url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Bsc700;
+  src: url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+  font-weight: 700;
+}
+
+
 .overlay {
   position: fixed;
   top: 0;
@@ -12,13 +25,12 @@
 .rules-modal {
   max-width: 425px;
   width: 100%;
-  height: 425px;
+  height: 440px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: inline;
-  justify-content: ;
   background-color: #ffffff;
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
   border: 1px solid black;
@@ -30,10 +42,34 @@
   justify-content: space-between;
   margin: 2px;
   padding: 30px;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
 
 }
 
 .beats-container {
+  margin: .5em;
+  padding: .5em;
+  height: 75%;
+  /* border: 1px solid red; */
+}
 
+.modal-header > h1 {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: hsl(217, 16%, 45%);
+}
+
+.close-icon {
+  position: fixed;
+  right: 35px;
+  top: 45px;
+}
+
+.rules-icon {
+  /* border: 2px solid red; */
+  width: 100%;
+  height: 100%;
+  /* padding: 15px 0px; */
+  
 }

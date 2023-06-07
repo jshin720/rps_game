@@ -1,3 +1,17 @@
+@font-face {
+  font-family: Bsc600;
+  src: url(https://fonts.google.com/specimen/Barlow+Semi+Condensed);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Bsc700;
+  src: url(https://fonts.google.com/specimen/Barlow+Semi+Condensed);
+  font-weight: 700;
+}
+
+
+
 *{
   margin: 0;
   padding: 0;
