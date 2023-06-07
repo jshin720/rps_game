@@ -10,10 +10,10 @@ export default function modal({ openModal, onClose }) {
   return (
     <>
       <div className="overlay">
-        <div className="rules-modal">
+        <div className="rules-modal" onClick={onClose}>
           <span className="modal-header">
             <h1>Rules</h1>
-            <ReactSVG src={CloseIcon} onClick={onClose} />
+            <ReactSVG src={CloseIcon} />
           </span>
           <div className="beats-container">
             <ReactSVG src={Rules} />
