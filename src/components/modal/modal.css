@@ -57,13 +57,13 @@
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 2em;
   text-transform: uppercase;
-  color: hsl(217, 16%, 45%);
+  color: hsl(229, 25%, 31%);
 }
 
 .close-icon {
   position: fixed;
   right: 35px;
-  top: 45px;
+  top: 41px;
 }
 
 .rules-icon {
