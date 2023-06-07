@@ -26,7 +26,10 @@
 .modal-header{
   display: flex;
   justify-content: space-between;
+  margin: 2px;
+  padding: 2px;
   border: 2px solid blue;
+
 }
 
 .beats-container {
