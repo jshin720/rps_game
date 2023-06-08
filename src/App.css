@@ -34,14 +34,14 @@
 
 .choices {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 3.125rem;
   display: flex;
   flex-direction: column;
   border: 2px solid white;
 
   .triangle {
     align-self: center;
-    margin-top: 70px;
+    margin-top: 4.375rem;
     border: 2px solid white;
   
   }
@@ -71,6 +71,13 @@
     border-radius: 50%;
     align-items: center;
     transform: translateX(1.5rem);
+    transition: transform .2s;
+    box-shadow: inset 0px 5px 2px grey, 
+    0px 8px darken(hsl(230, 89%, 62%), 15%) ;
+  }
+
+   .paper-btn:hover {
+    transform: translateX(1.5rem) scale(1.1);
   }
 
   .scissors-container {
@@ -88,7 +95,16 @@
     border-radius: 50%;
     align-items: center;
     transform: translateX(1.5rem);
+    transition: transform .2s;
+    box-shadow: inset 0px 5px 2px grey, 
+    0px 8px darken(hsl(230, 89%, 62%), 15%) ;
+    
   }
+
+   .scissors-btn:hover {
+    transform: translateX(1.5rem) scale(1.1);
+  }
+
 
   .rocks-container {
     position: fixed;
@@ -106,7 +122,15 @@
     border-radius: 50%;
     align-items: center;
     transform: translateX(1.5rem);
+    transition: transform .2s;
+    box-shadow: inset 0px 5px 6px grey, 
+    0px 8px darken(hsl(230, 89%, 62%), 15%);
   }
+
+   .rock-btn:hover {
+    transform: translateX(1.5rem) scale(1.1);
+  }
+
 
 }
 
