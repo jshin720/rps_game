@@ -90,10 +90,12 @@ function App() {
 
   return (
     <div className="App">
+      <div className="header">
       <ScoreCard
         userPoints={userPoints}
         // computerPoints={computerPoints}
       ></ScoreCard>
+      </div>
       <div className="choices">
         {!userChoice && !computerChoice ? (
           <div className="btn-container">

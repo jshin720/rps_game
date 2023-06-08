@@ -8,14 +8,15 @@ function ScoreCard(props) {
   
   return (
     <div className="scorecard-container">
-      <span className="choices-list">
-          <p>Rock</p>
-          <p>Paper</p>
-          <p>Scissor</p>
-      </span>
-      <span className="score-holder">
-        <h4 className="score-header">score {`${userPoints}`}</h4>
-      </span>
+      <div className="choices-list">
+        <p>Rock</p>
+        <p>Paper</p>
+        <p>Scissor</p>
+      </div>
+      <div className="score-holder">
+        <h4 className="score-header">Score</h4>
+        <span className="score-box">{`${userPoints}`}</span>
+      </div>
     </div>
   );
 }

@@ -3,11 +3,24 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  /* margin: 50%; */
+  /* padding: 50%; */
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: 2px solid white;
 }
 
 .modal-button {
