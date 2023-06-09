@@ -109,9 +109,9 @@
   .rocks-container {
     position: fixed;
     /* border: 2px solid pink; */
-    left: 40%;
-    right: 40%;
-    bottom: 45%;
+    /* left: 40%; */
+    /* right: 40%; */
+    /* bottom: 45%; */
   }
   .rock-btn {
     height: 175px;
