@@ -58,8 +58,8 @@
     /* margin:auto; */
     /* align-items: center; */
     position: fixed;
-    /* border: 2px solid pink; */
-    left: 25%;
+    border: 2px solid pink;
+    /* left: 25%; */
     top: 22%;
   }
   .paper-btn {
