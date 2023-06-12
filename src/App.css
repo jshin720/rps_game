@@ -26,11 +26,78 @@
 
 .choices {
   width: 100%;
-  border: 2px solid greenyellow;
+  /* border: 2px solid greenyellow; */
 }
 
 .choices-container {
-  
+  width: inherit;
+  position: relative;
+  margin-top: 3.125rem;
+  display: flex;
+  flex-direction: column;
+
+  .triangle {
+    position: absolute;
+    align-self: center;
+    margin-top: 4.375rem;
+  }
+
+  .choices-btn-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn {
+    height: 160px;
+    width: 160px;
+    border: 18px solid;
+    border-radius: 50%;
+    transition: transform .2s;
+
+    
+  }
+  .paper-btn {
+    background-color: #fff;
+    background-image: url("./images/paper.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: hsl(230, 89%, 62%);
+    transform: translateX(1.5rem);
+    box-shadow: inset 0px 0px 0px grey, 0px 8px darken(hsl(230, 89%, 62%), 15%);
+
+  }
+
+  .paper-btn:hover{
+    transform: translateX(1.5rem) scale(1.1);
+  }
+
+  .scissors-btn {
+    background-color: #fff;
+    background-image: url("./images/scissors.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: hsl(39, 89%, 49%);
+    transform: translateX(9.5rem);
+
+  }
+
+  .scissors-btn:hover{
+    transform: translateX(9.5rem) scale(1.1);
+  }
+
+  .rock-btn {
+    background-color: #fff;
+    background-image: url("./images/rock.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: hsl(349, 71%, 52%) ;
+    transform: translateX(-10rem) translateY(15rem);
+
+  }
+
+  .rock-btn:hover{
+    transform: translateX(-10rem) translateY(15rem)scale(1.1);
+  }
 }
 
 

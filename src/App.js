@@ -100,31 +100,29 @@ function App() {
           <div className="choices-container">
             <img src={Triangle} className="triangle" alt="triangle" />
             <div className="choices-btn-container">
-              <div className="top-btn-container">
-                <div className="paper-container">
-                  <button
-                    className="paper-btn"
-                    onClick={() => handleClick("paper")}
-                  >
-                    {/* <ReactSVG src={Paper} className="choice-icon" alt="paper" /> */}
-                  </button>
-                </div>
-                <div className="scissors-container">
-                  <button
-                    className="scissors-btn"
-                    onClick={() => handleClick("scissors")}
-                  >
-                    {/* <ReactSVG
+              <div className="paper-container">
+                <button
+                  className="btn paper-btn"
+                  onClick={() => handleClick("paper")}
+                >
+                  {/* <ReactSVG src={Paper} className="choice-icon" alt="paper" /> */}
+                </button>
+              </div>
+              <div className="scissors-container">
+                <button
+                  className="btn scissors-btn"
+                  onClick={() => handleClick("scissors")}
+                >
+                  {/* <ReactSVG
                       src={Scissors}
                       className="choice-icon"
                       alt="scissors"
                     /> */}
-                  </button>
-                </div>
+                </button>
               </div>
               <div className="rocks-container">
                 <button
-                  className="rock-btn"
+                  className="btn rock-btn"
                   onClick={() => handleClick("rock")}
                 >
                   {/* <ReactSVG src={Rock} className="choice-icon" alt="rock" /> */}
