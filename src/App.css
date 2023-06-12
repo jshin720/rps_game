@@ -125,3 +125,17 @@
     transform: rotate(360deg);
   }
 } */
+
+.modal-btn-container {
+  border: 10px solid green;
+  width: 100vw;
+  bottom: 1rem;
+
+}
+.modal-button {
+  position: absolute;
+  bottom: 1rem;
+  padding: 7px 25px;
+  /* right: 1rem; */
+  border-radius: .4rem;
+}

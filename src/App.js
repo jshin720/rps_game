@@ -155,6 +155,8 @@ function App() {
         )}
       </div>
 
+      <div className="modal-btn-container">
+
       <button className="modal-button" onClick={() => setOpenModal(true)}>
         Rules
       </button>
@@ -163,6 +165,8 @@ function App() {
         openModal={openModal}
         onClose={() => setOpenModal(false)}
       />
+
+      </div>
     </div>
   );
 }
