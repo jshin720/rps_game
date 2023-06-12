@@ -63,7 +63,7 @@
     background-repeat: no-repeat;
     border-color: hsl(230, 89%, 62%);
     transform: translateX(1.5rem);
-    box-shadow: inset 0px 0px 0px grey, 0px 8px darken(hsl(230, 89%, 62%), 15%);
+    box-shadow: inset 0px 5px 6px grey;
 
   }
 
@@ -78,7 +78,7 @@
     background-repeat: no-repeat;
     border-color: hsl(39, 89%, 49%);
     transform: translateX(9.5rem);
-
+    box-shadow: inset 0px 5px 6px grey;
   }
 
   .scissors-btn:hover{
@@ -92,6 +92,7 @@
     background-repeat: no-repeat;
     border-color: hsl(349, 71%, 52%) ;
     transform: translateX(-10rem) translateY(15rem);
+    box-shadow: inset 0px 5px 6px grey;
 
   }
 

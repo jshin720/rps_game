@@ -146,11 +146,7 @@ function App() {
         )}
       </div>
 
-      <div className="result">
-        <h1>Turn Result: {turnResults}</h1>
-        {/* <h1>Final Result: {result}</h1> */}
-      </div>
-
+     
       <div className="button-div">
         {gameOver && (
           <button className="button" onClick={() => reset()}>
