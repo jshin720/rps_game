@@ -99,40 +99,37 @@ function App() {
         {!userChoice && !computerChoice ? (
           <div className="choices-container">
             <ReactSVG src={Triangle} className="triangle" alt="triangle" />
-            <div className="paper-container">
-              <button
-                className="paper-btn"
-                onClick={() => handleClick("paper")}
-              >
-                <ReactSVG 
-                  src={Paper} 
-                  className="choice-icon" 
-                  alt="paper" 
-                />
-              </button>
-            </div>
-            <div className="scissors-container">
-              <button
-                className="scissors-btn"
-                onClick={() => handleClick("scissors")}
-              >
-                <ReactSVG
-                  src={Scissors}
-                  className="choice-icon"
-                  alt="scissors"
-                />
-              </button>
-            </div>
-            <div className="rocks-container">
-              <button className="rock-btn" 
-                onClick={() => handleClick("rock")}
-              >
-                <ReactSVG 
-                  src={Rock} 
-                  className="choice-icon" 
-                  alt="rock" 
-                />
-              </button>
+            <div className="choices-btn-container">
+              <div className="top-btn-container">
+                <div className="paper-container">
+                  <button
+                    className="paper-btn"
+                    onClick={() => handleClick("paper")}
+                  >
+                    <ReactSVG src={Paper} className="choice-icon" alt="paper" />
+                  </button>
+                </div>
+                <div className="scissors-container">
+                  <button
+                    className="scissors-btn"
+                    onClick={() => handleClick("scissors")}
+                  >
+                    <ReactSVG
+                      src={Scissors}
+                      className="choice-icon"
+                      alt="scissors"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div className="rocks-container">
+                <button
+                  className="rock-btn"
+                  onClick={() => handleClick("rock")}
+                >
+                  <ReactSVG src={Rock} className="choice-icon" alt="rock" />
+                </button>
+              </div>
             </div>
           </div>
         ) : (

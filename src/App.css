@@ -1,17 +1,9 @@
 
 
-*{
-  margin: 0;
-  padding: 0;
-  /* box-sizing: border-box; */
-}
-
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  font-family: 'Barlow Semi Condensed', sans-serif;
   /* margin: 50%; */
   /* padding: 50%; */
 }
@@ -47,20 +39,35 @@
   }
 
   .choices-container {
-    /* display: flex; */
-    /* justify-content: center; */
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+    align-items: center;
+    /* border: 2px solid green; */
   }
 
-  .choice-icon{
-    align-self: center;
+  .choices-btn-container {
+    display: flex;
+    width: inherit;
+    flex-direction: column;
+    border: 2px solid red;
   }
+
+  .top-btn-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position:fixed;
+    top: 15rem;
+    /* left: 5rem; */
+    border: 4px solid yellow;
+  }
+
   .paper-container {
-    /* margin:auto; */
-    /* align-items: center; */
-    position: fixed;
     border: 2px solid pink;
-    /* left: 25%; */
-    top: 22%;
+    /* position: fixed; */
+    /* left: 50rem; */
+    /* top: 15rem; */
   }
   .paper-btn {
     height: 175px;
@@ -70,7 +77,7 @@
     border: 18px solid hsl(230, 89%, 62%);
     border-radius: 50%;
     align-items: center;
-    transform: translateX(1.5rem);
+    /* transform: translateX(1.5rem); */
     transition: transform .2s;
     box-shadow: inset 0px 5px 2px grey, 
     0px 8px darken(hsl(230, 89%, 62%), 15%) ;
@@ -81,9 +88,9 @@
   }
 
   .scissors-container {
-    position: fixed;
+    /* position: fixed; */
     /* border: 2px solid pink; */
-    right: 30%;
+    /* right: 30%; */
     /* top: 22%; */
   }
   .scissors-btn {
@@ -94,7 +101,7 @@
     border: 18px solid hsl(39, 89%, 49%);
     border-radius: 50%;
     align-items: center;
-    transform: translateX(1.5rem);
+    /* transform: translateX(1.5rem); */
     transition: transform .2s;
     box-shadow: inset 0px 5px 2px grey, 
     0px 8px darken(hsl(230, 89%, 62%), 15%) ;
@@ -107,7 +114,7 @@
 
 
   .rocks-container {
-    position: fixed;
+    /* position: fixed; */
     /* border: 2px solid pink; */
     /* left: 40%; */
     /* right: 40%; */
@@ -121,7 +128,7 @@
     border: 18px solid hsl(349, 71%, 52%);
     border-radius: 50%;
     align-items: center;
-    transform: translateX(1.5rem);
+    /* transform: translateX(1.5rem); */
     transition: transform .2s;
     box-shadow: inset 0px 5px 6px grey, 
     0px 8px darken(hsl(230, 89%, 62%), 15%);
