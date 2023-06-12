@@ -98,7 +98,7 @@ function App() {
       <div className="choices">
         {!userChoice && !computerChoice ? (
           <div className="choices-container">
-            <ReactSVG src={Triangle} className="triangle" alt="triangle" />
+            <img src={Triangle} className="triangle" alt="triangle" />
             <div className="choices-btn-container">
               <div className="top-btn-container">
                 <div className="paper-container">
@@ -106,7 +106,7 @@ function App() {
                     className="paper-btn"
                     onClick={() => handleClick("paper")}
                   >
-                    <ReactSVG src={Paper} className="choice-icon" alt="paper" />
+                    {/* <ReactSVG src={Paper} className="choice-icon" alt="paper" /> */}
                   </button>
                 </div>
                 <div className="scissors-container">
@@ -114,11 +114,11 @@ function App() {
                     className="scissors-btn"
                     onClick={() => handleClick("scissors")}
                   >
-                    <ReactSVG
+                    {/* <ReactSVG
                       src={Scissors}
                       className="choice-icon"
                       alt="scissors"
-                    />
+                    /> */}
                   </button>
                 </div>
               </div>
@@ -127,7 +127,7 @@ function App() {
                   className="rock-btn"
                   onClick={() => handleClick("rock")}
                 >
-                  <ReactSVG src={Rock} className="choice-icon" alt="rock" />
+                  {/* <ReactSVG src={Rock} className="choice-icon" alt="rock" /> */}
                 </button>
               </div>
             </div>
