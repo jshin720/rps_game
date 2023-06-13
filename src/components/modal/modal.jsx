@@ -16,7 +16,7 @@ export default function modal({ openModal, onClose }) {
             <ReactSVG src={CloseIcon} className="close-icon"/>
           </span>
           <div className="beats-container">
-            <ReactSVG src={Rules} className="rules-icon" />
+            <img src={Rules} className="rules-icon" />
           </div>
         </div>
       </div>

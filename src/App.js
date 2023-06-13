@@ -147,16 +147,13 @@ function App() {
       </div>
 
      
-      <div className="button-div">
+      <div className="btn-container">
         {gameOver && (
           <button className="button" onClick={() => reset()}>
             Restart Game
           </button>
         )}
-      </div>
-
-      <div className="modal-btn-container">
-
+      
       <button className="modal-button" onClick={() => setOpenModal(true)}>
         Rules
       </button>

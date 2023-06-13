@@ -15,14 +15,6 @@
   /* border: 2px solid white; */
 }
 
-.modal-button {
-  position: fixed;
-  bottom: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  padding: 12px 24px;
-}
 
 .choices {
   width: 100%;
@@ -35,25 +27,25 @@
   margin-top: 3.125rem;
   display: flex;
   flex-direction: column;
-
+  
   .triangle {
     position: absolute;
     align-self: center;
     margin-top: 4.375rem;
   }
-
+  
   .choices-btn-container {
     display: flex;
     justify-content: center;
   }
-
+  
   .btn {
     height: 160px;
     width: 160px;
     border: 18px solid;
     border-radius: 50%;
     transition: transform .2s;
-
+    
     
   }
   .paper-btn {
@@ -64,27 +56,27 @@
     border-color: hsl(230, 89%, 62%);
     transform: translateX(1.5rem);
     box-shadow: inset 0px 5px 6px grey;
-
+    
   }
-
+  
   .paper-btn:hover{
     transform: translateX(1.5rem) scale(1.1);
   }
-
+  
   .scissors-btn {
     background-color: #fff;
     background-image: url("./images/scissors.svg");
     background-position: center;
     background-repeat: no-repeat;
     border-color: hsl(39, 89%, 49%);
-    transform: translateX(9.5rem);
+    transform: translateX(9.2rem);
     box-shadow: inset 0px 5px 6px grey;
   }
 
   .scissors-btn:hover{
     transform: translateX(9.5rem) scale(1.1);
   }
-
+  
   .rock-btn {
     background-color: #fff;
     background-image: url("./images/rock.svg");
@@ -126,16 +118,34 @@
   }
 } */
 
-.modal-btn-container {
+.btn-container {
+  position:absolute;
   border: 10px solid green;
   width: 100vw;
-  bottom: 1rem;
+  height: 10vh;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:50%;
 
 }
 .modal-button {
   position: absolute;
-  bottom: 1rem;
-  padding: 7px 25px;
-  /* right: 1rem; */
+  right: 1rem;
+  bottom: 1 rem;
+  background-color: #fff;
+  padding: 10px 45px;
   border-radius: .4rem;
+  border: 3px solid hsl(217, 16%, 45%);
+  color: hsl(217, 16%, 45%);
+  font-weight: 600;
+  background: none;
+  letter-spacing: 2px;
+  z-index: -1;
+}
+.modal-button:hover {
+ background-color: #ffffff;
+ color: hsl(229, 25%, 31%);
+ cursor: pointer;
 }
