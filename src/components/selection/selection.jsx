@@ -3,6 +3,7 @@ import Rock from "../../images/rock.svg";
 import Paper from "../../images/paper.svg";
 import Scissors from "../../images/scissors.svg";
 import { ReactSVG } from "react-svg";
+import "./selection.css";
 
 function Selection(props) {
   const {
@@ -27,50 +28,62 @@ function Selection(props) {
   };
 
   const svgSwitcher = (choice) => {
-    if (choice === "rock") return <ReactSVG src={Rock} alt={choice}/>;
-    if (choice === "paper") return <ReactSVG src={Paper} alt={choice} />;
-    if (choice === "scissors") return <ReactSVG src={Scissors} alt={choice} />;
-  } 
+    if (choice === "rock")
+      return (
+        <span className="choice-icons-rock">
+          <img src={Rock} alt={choice} className="rock-icon" />
+        </span>
+      );
+    if (choice === "paper")
+      return (
+        <span className="choice-icons-paper">
+          <img src={Paper} alt={choice} className="paper-icon" />;
+        </span>
+      );
+    if (choice === "scissors")
+      return (
+        <span className="choice-icons-scissor">
+          <img src={Scissors} alt={choice} className="scissors-icon" />;
+        </span>
+      );
+  };
 
   const choiceSwitch = () => {
-    
     // take out a layer of divs below later
     if (endPlayerTurn && !endComputerTurn) {
       return (
-        <div>
-          <div>
-            <h4>You Picked</h4>
-            <span>
-              {/* {`${userChoice}`} */}
-              {svgSwitcher(userChoice)}
-              </span>
+        <div className="selection-container">
+          <div className="player-choice-container">
+            <h4 className="players-selection">You Picked</h4>
+
+            {svgSwitcher(userChoice)}
           </div>
-          <div>
-            <h4>The House Picked</h4>
+          <div className="computer-choice-container">
+            <h4 className="players-selection">The House Picked</h4>
             <span className="placeHolder"></span>
           </div>
         </div>
       );
     } else if (endPlayerTurn && endComputerTurn) {
       return (
-        <div>
-          <div>
-            <h4>You Picked</h4>
-            <span>{svgSwitcher(userChoice)}</span>
+        <div className="selection-container">
+          <div className="player-choice-container">
+            <h4 className="players-selection">You Picked</h4>
+            {svgSwitcher(userChoice)}
           </div>
           <div>
             {roundOver ? (
-              <>
+              <div className="results-container">
                 <h1>{`${turnResults}`}</h1>
                 <button className="pa-button" onClick={() => handleClick()}>
                   Play Again
                 </button>
-              </>
+              </div>
             ) : null}
           </div>
-          <div>
-            <h4>The House Picked</h4>
-            <span>{svgSwitcher(computerChoice)}</span>
+          <div className="computer-choice-container">
+            <h4 className="players-selection">The House Picked</h4>
+            {svgSwitcher(computerChoice)}
           </div>
         </div>
       );
