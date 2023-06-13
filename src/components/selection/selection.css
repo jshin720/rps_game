@@ -19,17 +19,33 @@
 .results-container {
   display: flex;
   flex-direction: column;
-  /* margin: 50%; */
+  height: 100%;
+  align-items: center;
+  /* margin-top: 15rem; */
+  margin: 0 2rem;
   border: 4px solid white;
 }
 
 .results-container h1 {
-  margin: 50%;
+  /* margin: 50%; */
+  /* width: 100%; */
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 100px 10px 10px 10px;
+  /* padding: 0 25px; */
   border:  2px solid red;
 }
 
 .results-container button {
-  border: 5px solid black;
+  background-color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 80%;
+  padding: 15px 25px;
+  border-radius: 5px;
+  font-size: 1rem;
+  /* border: 5px solid black; */
 }
 
 
