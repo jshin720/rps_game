@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { ReactSVG } from "react-svg";
 import "./App.css";
 import ScoreCard from "./components/score_card/score_card";
 import Selection from "./components/selection/selection";
 import Modal from "./components/modal/modal";
-import Rock from "./images/rock.svg";
-import Paper from "./images/paper.svg";
-import Scissors from "./images/scissors.svg";
 import Triangle from "./images/bg-triangle.svg";
 
 function App() {
@@ -73,7 +69,7 @@ function App() {
       setUserPoints(updateUserPoints);
       setTurnResults("You Win!");
     } else if (cSelection.beats === userChoice) {
-      setTurnResults("You Lose");
+      setTurnResults("You Lose!");
     } else {
       setTurnResults("It's a tie!");
     }

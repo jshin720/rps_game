@@ -2,7 +2,6 @@ import React from "react";
 import Rock from "../../images/rock.svg";
 import Paper from "../../images/paper.svg";
 import Scissors from "../../images/scissors.svg";
-import { ReactSVG } from "react-svg";
 import "./selection.css";
 
 function Selection(props) {
@@ -21,6 +20,11 @@ function Selection(props) {
   } = props;
   console.log("selection", props);
 
+  let playerWins, computerWins;
+  
+  if (turnResults === "You Win!") playerWins = true;
+  if (turnResults === "You Lose!") computerWins = true;
+
   const handleClick = () => {
     setUserChoice("");
     setComputerChoice("");
@@ -29,9 +33,9 @@ function Selection(props) {
     setRoundOver(false)
   };
 
-  const svgSwitcher = (choice) => {
+  const svgSwitcher = (choice, turnWinner = false) => {
     if (choice === "rock")
-      if (turnResults === "You Win!") {
+      if (turnWinner) {
         return (
         <span className="winner-rock">
           <img src={Rock} alt={choice} className="rock-icon" />
@@ -44,32 +48,32 @@ function Selection(props) {
           </span>
         );
     } else if (choice === "paper") {
-        if (turnResults === "You Win!") {
+        if (turnWinner) {
           return (
             <span className="winner-paper">
               <img src={Paper} alt={choice} className="paper-icon" />
             </span>
-          )
+          );
         } else {
           return (
             <span className="choice-icons-paper">
               <img src={Paper} alt={choice} className="paper-icon" />;
             </span>
-          )
+          );
         }  
     } else if (choice === "scissors") {
-      if (turnResults === "You Win!") {
+      if (turnWinner) {
         return (
           <span className="winner-scissors">
             <img src={Scissors} alt={choice} className="scissors-icon" />
           </span>
-        )
+        );
       } else {
         return (
           <span className="choice-icons-scissor">
             <img src={Scissors} alt={choice} className="scissors-icon" />;
           </span>
-        )
+        );
       };
     }
   }
@@ -95,7 +99,7 @@ function Selection(props) {
         <div className="selection-container">
           <div className="player-choice-container">
             <h4 className="players-selection">You Picked</h4>
-            {svgSwitcher(userChoice)}
+            {svgSwitcher(userChoice, playerWins)}
           </div>
           <div>
             {roundOver ? (
@@ -109,7 +113,7 @@ function Selection(props) {
           </div>
           <div className="computer-choice-container">
             <h4 className="players-selection">The House Picked</h4>
-            {svgSwitcher(computerChoice)}
+            {svgSwitcher(computerChoice, computerWins)}
           </div>
         </div>
       );
