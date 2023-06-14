@@ -79,7 +79,7 @@ function Selection(props) {
   }
 
   const choiceSwitch = () => {
-    // take out a layer of divs below later
+    
     if (endPlayerTurn && !endComputerTurn) {
       return (
         <div className="selection-container">

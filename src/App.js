@@ -51,7 +51,7 @@ function App() {
     console.log("1st useeffect", userChoice);
     if (userChoice) {
       setTimeout(() => {
-        // console.log('timeout')
+       
         generateComputerChoice();
         setEndComputerTurn(true);
       }, 2000);
@@ -59,12 +59,12 @@ function App() {
   }, [endPlayerTurn]);
 
   const gameResult = (userChoice, computerChoice) => {
-    // console.log('gr', userChoice, computerChoice)
+    
     const pSelection = choices.find((choice) => userChoice === choice.name);
     const cSelection = choices.find((choice) => computerChoice === choice.name);
     const updateUserPoints = userPoints + 1;
     setRoundOver(true);
-    // console.log('selection', pSelection, cSelection)
+    
     if (pSelection.beats === computerChoice) {
       setUserPoints(updateUserPoints);
       setTurnResults("You Win!");
@@ -76,7 +76,7 @@ function App() {
   };
 
   useEffect(() => {
-    // console.log('2nd useeffect', computerChoice);
+   
     if (userChoice && computerChoice)
       setTimeout(() => {
         gameResult(userChoice, computerChoice);
@@ -88,7 +88,6 @@ function App() {
       <div className="header">
         <ScoreCard
           userPoints={userPoints}
-          // computerPoints={computerPoints}
         ></ScoreCard>
       </div>
       <div className="choices">
@@ -101,7 +100,6 @@ function App() {
                   className="btn paper-btn"
                   onClick={() => handleClick("paper")}
                 >
-                  {/* <ReactSVG src={Paper} className="choice-icon" alt="paper" /> */}
                 </button>
               </div>
               <div className="scissors-container">
@@ -109,11 +107,6 @@ function App() {
                   className="btn scissors-btn"
                   onClick={() => handleClick("scissors")}
                 >
-                  {/* <ReactSVG
-                      src={Scissors}
-                      className="choice-icon"
-                      alt="scissors"
-                    /> */}
                 </button>
               </div>
               <div className="rocks-container">

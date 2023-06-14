@@ -93,30 +93,6 @@
 }
 
 
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
 .btn-container {
   position:fixed;
   /* border: 10px solid green; */
@@ -224,9 +200,6 @@
     box-shadow: inset 0px 5px 6px grey, 0px 8px hsl(40, 84%, 30%);
   }
 
-  /* .scissors-btn:hover{
-    transform: translateX(9.5rem) scale(1.1);
-  } */
   
   .rock-btn {
     background-color: #fff;
@@ -247,7 +220,7 @@
 
 .btn-container {
   position:fixed;
-  /* border: 10px solid green; */
+  
   margin-top: 1000px;
   width: 50%;
   height: 10vh;
@@ -255,7 +228,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* bottom:10%; */
+ 
 
 }
 .modal-button {
