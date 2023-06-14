@@ -8,9 +8,9 @@
   border-radius: 1rem;
   padding: 1.25rem;
 
-  .choices-list{
+  .choices-list {
     font-size: 2.5rem;
-    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-family: "Barlow Semi Condensed", sans-serif;
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
@@ -25,16 +25,59 @@
     color: hsl(229, 64%, 46%);
     border-radius: 5px;
     border: 2px solid white;
-    padding: .75rem 2.5rem;
+    padding: 0.75rem 2.5rem;
   }
 
   .score-header {
-    padding: .25rem;
+    padding: 0.25rem;
   }
   .score-box {
-    padding-top: .25rem;
+    padding-top: 0.25rem;
     color: hsl(229, 25%, 31%);
     font-size: 3.5rem;
     font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 925px) {
+  .scorecard-container {
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid hsl(217, 16%, 45%);
+    max-width: 47.75rem;
+    width: 70%;
+    margin-top: 1.875rem;
+    border-radius: 1rem;
+    padding: 1.25rem;
+
+    .choices-list {
+      font-size: 1.75rem;
+      font-family: "Barlow Semi Condensed", sans-serif;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      font-weight: 600;
+      line-height: 2rem;
+    }
+    .score-holder {
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      color: hsl(229, 64%, 46%);
+      border-radius: 5px;
+      border: 2px solid white;
+      padding: 0.5rem 1.5rem;
+    }
+
+    .score-header {
+      padding: 0.2rem;
+    }
+    .score-box {
+      padding-top: 0.25rem;
+      color: hsl(229, 25%, 31%);
+      font-size: 2.75rem;
+      font-weight: 700;
+    }
   }
 }
