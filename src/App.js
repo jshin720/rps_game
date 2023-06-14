@@ -142,6 +142,7 @@ function App() {
             setComputerChoice={setComputerChoice}
             setTurnResults={setTurnResults}
             setEndPlayerTurn={setEndPlayerTurn}
+            setRoundOver={setRoundOver}
           />
         )}
       </div>

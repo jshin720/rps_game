@@ -17,6 +17,7 @@ function Selection(props) {
     setUserChoice,
     setTurnResults,
     setEndPlayerTurn,
+    setRoundOver
   } = props;
   console.log("selection", props);
 
@@ -25,28 +26,53 @@ function Selection(props) {
     setComputerChoice("");
     setTurnResults("");
     setEndPlayerTurn(false);
+    setRoundOver(false)
   };
 
   const svgSwitcher = (choice) => {
     if (choice === "rock")
-      return (
-        <span className="choice-icons-rock">
+      if (turnResults === "You Win!") {
+        return (
+        <span className="winner-rock">
           <img src={Rock} alt={choice} className="rock-icon" />
         </span>
-      );
-    if (choice === "paper")
-      return (
-        <span className="choice-icons-paper">
-          <img src={Paper} alt={choice} className="paper-icon" />;
-        </span>
-      );
-    if (choice === "scissors")
-      return (
-        <span className="choice-icons-scissor">
-          <img src={Scissors} alt={choice} className="scissors-icon" />;
-        </span>
-      );
-  };
+        )
+      } else {
+        return (
+          <span className="choice-icons-rock">
+            <img src={Rock} alt={choice} className="rock-icon" />
+          </span>
+        );
+    } else if (choice === "paper") {
+        if (turnResults === "You Win!") {
+          return (
+            <span className="winner-paper">
+              <img src={Paper} alt={choice} className="paper-icon" />
+            </span>
+          )
+        } else {
+          return (
+            <span className="choice-icons-paper">
+              <img src={Paper} alt={choice} className="paper-icon" />;
+            </span>
+          )
+        }  
+    } else if (choice === "scissors") {
+      if (turnResults === "You Win!") {
+        return (
+          <span className="winner-scissors">
+            <img src={Scissors} alt={choice} className="scissors-icon" />
+          </span>
+        )
+      } else {
+        return (
+          <span className="choice-icons-scissor">
+            <img src={Scissors} alt={choice} className="scissors-icon" />;
+          </span>
+        )
+      };
+    }
+  }
 
   const choiceSwitch = () => {
     // take out a layer of divs below later
