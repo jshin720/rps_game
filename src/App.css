@@ -17,6 +17,7 @@
 
 .choices {
   width: 100%;
+  /* margin-bottom: 25%; */
   /* border: 2px solid greenyellow; */
 }
 
@@ -96,13 +97,13 @@
 .btn-container {
   position:fixed;
   /* border: 10px solid green; */
-  width: 100vw;
+  width: 60vw;
   height: 10vh;
   z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom:10%;
+  bottom:30%;
 
 }
 .modal-button {
@@ -144,6 +145,7 @@
 
 .choices {
   width: 100%;
+  /* margin-bottom: 30%; */
   /* border: 2px solid greenyellow; */
 }
 
@@ -220,9 +222,9 @@
 
 .btn-container {
   position:fixed;
-  
-  margin-top: 1000px;
-  width: 50%;
+  /* border: 2px solid green; */
+  /* margin-top: 50vh; */
+  width: 50vw;
   height: 10vh;
   z-index: 10;
   display: flex;
@@ -233,10 +235,11 @@
 }
 .modal-button {
   position: absolute;
+  margin-top: 10vh;
   font-weight: 600;
   color: hsl(217, 16%, 45%);
   font-size: 1.2rem;
-  right: 3.5rem;
+  /* right: 3.5rem; */
   bottom: 1 rem;
   background-color: #fff;
   padding: 10px 45px;
